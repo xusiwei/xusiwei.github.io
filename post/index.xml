@@ -11,20 +11,140 @@
     <atom:link href="https://xusiwei.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>hello world</title>
+      <title>你好，世界</title>
       <link>https://xusiwei.github.io/post/hello-world/</link>
       <pubDate>Fri, 19 Feb 2016 23:16:09 +0800</pubDate>
       
       <guid>https://xusiwei.github.io/post/hello-world/</guid>
       <description>
 
-&lt;h1 id=&#34;about-hugo:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;About Hugo&lt;/h1&gt;
+&lt;p&gt;这是一篇测试博客，在这你将看到Hugo对Markdown的渲染效果。&lt;/p&gt;
 
-&lt;p&gt;Hugo is a static site generator&lt;/p&gt;
+&lt;h1 id=&#34;关于-hugo:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;关于 Hugo&lt;/h1&gt;
 
-&lt;h2 id=&#34;and-more:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;And more&lt;/h2&gt;
+&lt;p&gt;Hugo是一个静态网站生成器&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://github.com/spf13/hugo&#34;&gt;https://github.com/spf13/hugo&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;headers:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;Headers&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;# This is an `&amp;lt;h1&amp;gt;` tag
+## This is an `&amp;lt;h2&amp;gt;` tag
+###### This is an `&amp;lt;h6&amp;gt;` tag
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;this-is-an-h1-tag:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;This is an &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; tag&lt;/h1&gt;
+
+&lt;h2 id=&#34;this-is-an-h2-tag:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;This is an &lt;code&gt;&amp;lt;h2&amp;gt;&lt;/code&gt; tag&lt;/h2&gt;
+
+&lt;h6 id=&#34;this-is-an-h6-tag:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;This is an &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; tag&lt;/h6&gt;
+
+&lt;h1 id=&#34;emphasis:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;Emphasis&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;*This text will be italic*
+_This will also be italic_
+
+**This text will be bold**
+__This will also be bold__
+
+_You **can** combine them_
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;This text will be italic&lt;/em&gt;
+&lt;em&gt;This will also be italic&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;This text will be bold&lt;/strong&gt;
+&lt;strong&gt;This will also be bold&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;You &lt;strong&gt;can&lt;/strong&gt; combine them&lt;/em&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;lists:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;Lists&lt;/h1&gt;
+
+&lt;h2 id=&#34;unordered:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;Unordered&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;* Item 1
+* Item 2
+  * Item 2a
+  * Item 2b
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Item 1&lt;/li&gt;
+&lt;li&gt;Item 2
+
+&lt;ul&gt;
+&lt;li&gt;Item 2a&lt;/li&gt;
+&lt;li&gt;Item 2b&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ordered:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;Ordered&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;1. Item 1
+2. Item 2
+3. Item 3
+   * Item 3a
+   * Item 3b
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Item 1&lt;/li&gt;
+&lt;li&gt;Item 2&lt;/li&gt;
+&lt;li&gt;Item 3
+
+&lt;ul&gt;
+&lt;li&gt;Item 3a&lt;/li&gt;
+&lt;li&gt;Item 3b&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;images:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;Images&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;![GitHub Logo](https://github.com/fluidicon.png)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/fluidicon.png&#34; alt=&#34;GitHub Logo&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;links:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;Links&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://github.com&#34;&gt;http://github.com&lt;/a&gt; - automatic!&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;[GitHub](http://github.com)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://github.com&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;blockquotes:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;Blockquotes&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;As Kanye West said:
+&amp;gt; We&#39;re living the future so
+&amp;gt; the present is our past.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As Kanye West said:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;We&amp;rsquo;re living the future so
+the present is our past.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;codes:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;Codes&lt;/h1&gt;
+
+&lt;h2 id=&#34;inline-code:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;Inline code&lt;/h2&gt;
+
+&lt;p&gt;I think you should use an &lt;code&gt;&amp;lt;addr&amp;gt;&lt;/code&gt; element here instead.&lt;/p&gt;
+
+&lt;h2 id=&#34;mutiline-code:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;Mutiline code&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+
+int main() {
+    printf(&amp;quot;Hello, World!\n&amp;quot;);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;more:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;More&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/spf13/hugo&#34;&gt;Hugo on GitHub&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://guides.github.com/features/mastering-markdown/&#34;&gt;Mastring Markdown&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
