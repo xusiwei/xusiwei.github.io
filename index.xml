@@ -20,11 +20,9 @@
 
 &lt;p&gt;从前天晚上开始尝试了一下用Hugo和GitHub Pages搭建静态博客，总体还算顺利（主要是Hugo用起来比较方便）。&lt;/p&gt;
 
-&lt;h1 id=&#34;关于-hugo:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;关于 Hugo&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;关于 Hugo&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Hugo 是由 spf13 创建的一个静态网站生成器&lt;/p&gt;
-
-&lt;p&gt;Hugo首页：&lt;a href=&#34;https://www.gohugo.io/&#34;&gt;https://www.gohugo.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hugo 是由 spf13 创建的一个静态网站生成器，首页：&lt;a href=&#34;https://www.gohugo.io/&#34;&gt;https://www.gohugo.io/&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;hugo-工作流:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;Hugo 工作流&lt;/h1&gt;
 
