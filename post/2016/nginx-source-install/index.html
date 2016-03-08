@@ -247,7 +247,8 @@ tar xzvf pcre-8.38.tar.gz
 
 <h2 id="启动:52a4c6da7db903582370865375f9a938">启动</h2>
 
-<p>源码编译安装生成的可执行文件位于 <code>/usr/local/nginx/sbin/</code>目录下，所以还需要将该目录加到<code>$PATH</code>下，或者<code>$PATH</code>的某个目录中创建一个符合链接指向 <code>/usr/local/nginx/sbin/nginx</code></p>
+<p>源码编译安装生成的可执行文件位于 <code>/usr/local/nginx/sbin/</code>目录下，所以还需要将该目录加到<code>$PATH</code>下，
+或者在<code>$PATH</code>的某个目录中创建一个符号链接指向 <code>/usr/local/nginx/sbin/nginx</code></p>
 
 <pre><code>xusiwei@github:~$ cd /usr/local/bin/
 xusiwei@github:/usr/local/bin$ sudo ln -s /usr/local/nginx/sbin/nginx nginx
@@ -258,7 +259,7 @@ nginx version: nginx/1.8.1
 <p>然后，就可以启动了：</p>
 
 <pre><code>xusiwei@github:~$ sudo nginx
-xusiwei@github:~$ 
+xusiwei@github:~$
 xusiwei@github:~$ ps -ef | grep nginx
 xu       26065 24955  2 3月07 pts/2   00:00:53 kwrite content/post/2016/nginx-source-warmup.md
 root     30077     1  0 00:08 ?        00:00:00 nginx: master process nginx
@@ -316,7 +317,9 @@ nginx -s参数提供了优雅的停止nginx的操作：</p>
 
 <h2 id="关于软件源安装:52a4c6da7db903582370865375f9a938">关于软件源安装</h2>
 
-<p>多数发行版的 软件源 中都已经收录了nginx，但通常版本都比较;另外，如果你的发行版所属的发行商已经不再维护那个版本了，比如ubuntu 10.04，所以如果你用的不是最新的发行版，不推荐默认软件源从软件源安装。</p>
+<p>多数发行版的 软件源 中都已经收录了nginx，但通常版本都比较;
+另外，如果你的发行版所属的发行商已经不再维护那个版本了，比如ubuntu 10.04，
+所以，不推荐从默认软件源安装。</p>
 
 <p>但如果觉得自己编译麻烦，可以从nginx.org的“源”安装预先编译好的软件包，具体步骤参见：<a href="http://nginx.org/en/linux_packages.html">http://nginx.org/en/linux_packages.html</a></p>
 
