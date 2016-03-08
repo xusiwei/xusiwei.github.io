@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.15" />
 
-  <title>xusiwei&#39;s blog</title>
+  <title>docker 入门指南 &middot; xusiwei&#39;s blog</title>
 
   
   <link rel="stylesheet" href="/css/pure/0.6.0/pure-min.css">
@@ -136,18 +136,12 @@
 
 
 <div class="header">
-  <h1>xusiwei&#39;s blog</h1>
-  <h2>A coder&#39;s daily</h2>
+  <h1>docker 入门指南</h1>
+  <h2></h2>
 </div>
-
 <div class="content">
-  
-    
-      <article>
-  <header>
-    <h2><a href="https://xusiwei.github.io/post/2016/docker-get-start/">docker 入门指南</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
@@ -168,10 +162,9 @@
 
 </div>
 
-  </header>
+  
 
-  <p>
-  <p>本文是实践官方“Get Started”的一个记录，由于我的桌面系统是Debian 8，本文的操作仅确保在 Debian 8 上正确。
+<p>本文是实践官方“Get Started”的一个记录，由于我的桌面系统是Debian 8，本文的操作仅确保在 Debian 8 上正确。
 指南链接（Linux版）： <a href="https://docs.docker.com/linux/">https://docs.docker.com/linux/</a></p>
 
 <h2 id="安装-docker:c57648232b8ca5cef6cec3c0bc434e73">安装 Docker</h2>
@@ -216,212 +209,129 @@ root         8     1  0 15:32 ?        00:00:00 ps -ef
 
 <p>可以看到，仅有两个进程，而且pid都非常小。这说明，这个会话环境已经与外界隔离了。</p>
 
-  </p>
+<h4 id="hello-world:c57648232b8ca5cef6cec3c0bc434e73">hello world</h4>
+
+<p>安装成功后，验证：</p>
+
+<pre><code>user@host$ docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+535020c3e8ad: Pull complete
+af340544ed62: Pull complete
+Digest: sha256:a68868bfe696c00866942e8f5ca39e3e31b79c1e50feaee4ce5e28df2f051d5c
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker.
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker Engine CLI client contacted the Docker Engine daemon.
+ 2. The Docker Engine daemon pulled the &quot;hello-world&quot; image from the Docker Hub.
+ 3. The Docker Engine daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker Engine daemon streamed that output to the Docker Engine CLI client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker Hub account:
+ https://hub.docker.com
+
+For more examples and ideas, visit:
+ https://docs.docker.com/userguide/
+</code></pre>
+
+<p>其中，<code>Hello from Docker.</code>及以后的内容是docker运行的结果，前面是镜像下载的log。</p>
+
+<h3 id="软件源安装:c57648232b8ca5cef6cec3c0bc434e73">软件源安装</h3>
+
+<pre><code>sudo apt-get install docker-engine
+</code></pre>
+
+<p>通常版本较低（不推荐）。</p>
+
+<h2 id="关于image和container:c57648232b8ca5cef6cec3c0bc434e73">关于image和container</h2>
+
+<p>刚才的一个<code>docker run hello-world</code>命令，包含了docker引擎的主要工作，命令的三部分：
+<img src="/post/2016/docker-cmd-struct.png" alt="docker command structure" /></p>
+
+<p><code>container</code>（容器）是一个最精简的Linux操作系统。<code>image</code>（镜像）是可以装载到<code>container</code>的软件。
+敲下hello-world命令后，docker引擎：
+* 检查本地是否已经有<code>hello-world</code>镜像
+* 如果没有，从Docker Hub下载该镜像
+* 将镜像装入容器并运行它</p>
+
+<p><code>hello-world</code>进行输出一些信息后就退出了。一般情况下，镜像的具体行为和它的构建过程有关。</p>
+
+<p>Docker镜像的功能远不至于此，它可以是像数据库那样的复杂软件，运行后等待你（或其他人）向其中添加数据。</p>
+
+<p>Docker引擎让创建并分享软件变得简单——Docker容器总能保证镜像能够运行。</p>
+
+<h2 id="寻找-运行别人创建的镜像-docker-hub:c57648232b8ca5cef6cec3c0bc434e73">寻找、运行别人创建的镜像 —— Docker Hub</h2>
+
+<p>Docker Hub和GitHub类似，只是Docker Hub上托管的是Docker镜像而不是源码，这里你同样可给关注的镜像star。</p>
+
+<p>在Docker Hub上能找到来自世界各地的人创建的docker镜像，docker hub的explore和GitHub的explore也非常类似，可在浏览其他人都创建了那些镜像，也能够看到各个镜像有多少star。</p>
+
+<p>官方的<code>Get Started</code>里面以whalesay为例演示了如何用Docker Hub：
+1. 在Docker Hub上搜索whalesay镜像
+2. 运行whalesay镜像</p>
+
+<pre><code>$ docker run docker/whalesay cowsay boo
+_____
+&lt; boo &gt;
+-----
+   \
+    \
+     \
+                   ##        .
+             ## ## ##       ==
+          ## ## ## ##      ===
+      /&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;___/ ===
+ ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ /  ===- ~~~
+      \______ o          __/
+       \    \        __/
+         \____\______/
+</code></pre>
+
+<p>whalesay是一个基于ubuntu 14.04构建的、命令行下输出字符图像的镜像，just for fun。</p>
+
 
   
-  <footer>
-    <a href="/post/2016/docker-get-start/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1 pure-u-md-1-2">
     
-  
-    
-      <article>
-  <header>
-    <h2><a href="https://xusiwei.github.io/post/2016/nginx-source-install/">NGINX 源码安装</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>2016-03-07, 23:35</time>
   </div>
-
-  
-
-  
-  
-  
-  
-
-  
-  
-  
-  
-
+  <div class="pure-u-1 pure-u-md-1-2">
+    
+    <nav class="next">
+      <a href="https://xusiwei.github.io/post/2016/nginx-source-install/">NGINX 源码安装<i class="fa fa-arrow-circle-right fa-fw fa-lg"></i></a>
+    </nav>
+    
+  </div>
 </div>
 
-  </header>
-
-  <p>
-  <p>NIGNX 是由 Igor Sysoev 开发的一个 Web 服务器。
-官网：<a href="http://nginx.org/">http://nginx.org/</a></p>
-
-<p>下载页面： <a href="http://nginx.org/en/download.html">http://nginx.org/en/download.html</a></p>
-
-<h2 id="下载-nginx:52a4c6da7db903582370865375f9a938">下载 NGINX</h2>
-
-<p>以 1.8.1 版本为例：</p>
-
-<pre><code>wget http://nginx.org/download/nginx-1.8.1.tar.gz
-</code></pre>
-
-<h2 id="下载依赖库:52a4c6da7db903582370865375f9a938">下载依赖库</h2>
-
-<p>NGINX必须依赖zlib和pcre, (若想让nginx支持HTTPS协议，还需OpenSSL)</p>
-
-<p>NGINX 使用zlib进行gzip编/解码（压缩/解压缩）， zlib: <a href="http://zlib.net/">http://zlib.net/</a></p>
-
-<p>下载 zlib-1.2.8:</p>
-
-<pre><code>wget http://zlib.net/zlib-1.2.8.tar.gz
-</code></pre>
-
-<p>NGINX 使用pcre作正则表达式匹配， pcre: <a href="http://pcre.org/">http://pcre.org/</a></p>
-
-<p>ftp: <a href="ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/">ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/</a></p>
-
-<p>下载 pcre-8.38:</p>
-
-<pre><code>wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.38.tar.gz
-</code></pre>
-
-<h2 id="解压:52a4c6da7db903582370865375f9a938">解压</h2>
-
-<pre><code>tar xzvf nginx-1.8.1.tar.gz
-
-tar xzvf zlib-1.2.8.tar.gz
-
-tar xzvf pcre-8.38.tar.gz
-</code></pre>
-
-<h2 id="编译:52a4c6da7db903582370865375f9a938">编译</h2>
-
-<pre><code>cd nginx-1.8.1/
-
-./configure --with-pcre=../pcre-8.38 --with-zlib=../zlib-1.2.8
-</code></pre>
-
-<h2 id="安装:52a4c6da7db903582370865375f9a938">安装</h2>
-
-<pre><code>sudo make install
-</code></pre>
-
-  </p>
-
-  
-  <footer>
-    <a href="/post/2016/nginx-source-install/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-    
-  
-    
-      <article>
-  <header>
-    <h2><a href="https://xusiwei.github.io/post/2016/build-blog-with-hugo-and-github-pages/">用Hugo和GitHub Pages搭建博客</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>2016-02-21, 16:36</time>
-  </div>
-
-  
-
-  
-  
-  
-  
-
-  
-  
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  <p>从前天晚上开始尝试了一下用Hugo和GitHub Pages搭建静态博客，总体还算顺利（主要是Hugo用起来比较方便）。</p>
-
-<p><strong>关于 Hugo</strong></p>
-
-<p>Hugo 是由 spf13 创建的一个静态网站生成器，首页：<a href="https://www.gohugo.io/">https://www.gohugo.io/</a></p>
-
-<h1 id="hugo-工作流:12928e9650273f3ab009a12bccc3ed6e">Hugo 工作流</h1>
-
-<p>下面将介绍Hugo的完整工作流程：</p>
-
-<h2 id="快速安装:12928e9650273f3ab009a12bccc3ed6e">快速安装</h2>
-
-<p>在 <a href="https://www.gohugo.io/">https://www.gohugo.io/</a> 能够找到 Homebrew 安装 Hugo的命令，</p>
-
-<p>以及Download： <a href="https://github.com/spf13/hugo/releases">https://github.com/spf13/hugo/releases</a></p>
-
-<p>下载对应的操作系统版本的Hugo二进制文件（hugo或者hugo.exe），添加到<code>$PATH</code>能找到的目录下。</p>
-
-  </p>
-
-  
-  <footer>
-    <a href="/post/2016/build-blog-with-hugo-and-github-pages/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-    
-  
-    
-  
-    
-      <article>
-  <header>
-    <h2><a href="https://xusiwei.github.io/post/hello-world/">你好，世界</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>2016-02-19, 23:16</time>
-  </div>
 
   
 
   
 
-  
+<div class="ds-thread" data-thread-key="/post/2016/docker-get-start/" data-title="docker 入门指南" data-url="https://xusiwei.github.io/post/2016/docker-get-start/"></div>
 
-</div>
 
-  </header>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"githubxu"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
 
-  <p>
-  <p>这是一篇测试博客，在这你将看到Hugo对Markdown的渲染效果。</p>
-
-<h1 id="关于-hugo:aa77bbfd89a7b0ff10def205b9c08d51">关于 Hugo</h1>
-
-<p>Hugo是一个静态网站生成器</p>
-
-  </p>
-
-  
-  <footer>
-    <a href="/post/hello-world/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-    
-  
-
-  
 
 
 </div>
