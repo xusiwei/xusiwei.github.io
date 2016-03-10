@@ -1,0 +1,200 @@
+{
+  "title": "main",
+  "id": 1,
+  "formatVersion": 2,
+  "ideas": {
+    "1": {
+      "title": "ngx_log_init(ngx_prefix)",
+      "id": 4,
+      "attr": {
+        "style": {}
+      }
+    },
+    "11": {
+      "title": "ngx_process_options(&init_cycle)",
+      "id": 6,
+      "attr": {
+        "style": {}
+      }
+    },
+    "21": {
+      "title": "ngx_init_cycle(&init_cycle)",
+      "id": 7,
+      "attr": {
+        "style": {}
+      },
+      "ideas": {
+        "1": {
+          "title": "foreach module:  create_conf(cycle)",
+          "id": 8
+        },
+        "2": {
+          "title": "ngx_conf_param(&conf)",
+          "id": 9
+        },
+        "3": {
+          "title": "ngx_conf_parse(&conf, &cycle->conf_file)",
+          "id": 10
+        },
+        "4": {
+          "title": "foreach module: init_conf",
+          "id": 11
+        },
+        "5": {
+          "title": "create shared memory ",
+          "id": 12,
+          "ideas": {
+            "1": {
+              "title": "ngx_shm_alloc(&shm_zone[i].shm)",
+              "id": 13,
+              "attr": {
+                "style": {}
+              },
+              "ideas": {
+                "1": {
+                  "title": "mmap(NULL, shm->size, PROT_READ|PROT_WRITE,MAP_ANON|MAP_SHARED, -1, 0)",
+                  "id": 14
+                }
+              }
+            },
+            "2": {
+              "title": "ngx_init_zone_pool(cycle, &shm_zone[i])",
+              "id": 15,
+              "ideas": {
+                "1": {
+                  "title": "ngx_shmtx_create(&sp->mutex, &sp->lock, file)",
+                  "id": 16,
+                  "ideas": {
+                    "1": {
+                      "title": "sem_init(&mtx->sem, 1, 0)",
+                      "id": 17
+                    }
+                  }
+                },
+                "2": {
+                  "title": "ngx_slab_init(sp)",
+                  "id": 18
+                }
+              }
+            },
+            "3": {
+              "title": "shm_zone[i].init(&shm_zone[i], NULL)",
+              "id": 19
+            }
+          }
+        },
+        "6": {
+          "title": "handle the listening sockets",
+          "id": 22,
+          "ideas": {
+            "1": {
+              "title": "ngx_open_listening_sockets(cycle)",
+              "id": 23,
+              "ideas": {
+                "1": {
+                  "title": "setsockopt(s, SOL_SOCKET, SO_REUSEADDR,...)",
+                  "id": 24
+                },
+                "2": {
+                  "title": "ngx_nonblocking(s)",
+                  "id": 25
+                },
+                "3": {
+                  "title": "bind(s, ls[i].sockaddr, ls[i].socklen)",
+                  "id": 26,
+                  "ideas": {}
+                },
+                "4": {
+                  "title": "listen(s, ls[i].backlog)",
+                  "id": 28
+                }
+              }
+            }
+          }
+        },
+        "7": {
+          "title": "foreach module: init_module",
+          "id": 29
+        },
+        "6.5": {
+          "title": "ngx_log_redirect_stderr(cycle)",
+          "id": 30
+        }
+      }
+    },
+    "31": {
+      "title": "ngx_master_process_cycle(cycle)",
+      "id": 32,
+      "ideas": {
+        "1": {
+          "title": "ngx_start_worker_processes(cycle, ccf->worker_processes, NGX_PROCESS_RESPAWN)",
+          "id": 33,
+          "ideas": {
+            "1": {
+              "title": "ngx_spawn_process(cycle, ngx_worker_process_cycle, (void *) (intptr_t) i, \"worker process\", type)",
+              "id": 36,
+              "ideas": {
+                "1": {
+                  "title": "socketpair(AF_UNIX, SOCK_STREAM, 0, ngx_processes[s].channel)",
+                  "id": 37
+                },
+                "2": {
+                  "title": "ngx_nonblocking(ngx_processes[s].channel[0])",
+                  "id": 38
+                },
+                "3": {
+                  "title": "ngx_nonblocking(ngx_processes[s].channel[1])",
+                  "id": 39
+                },
+                "4": {
+                  "title": "ioctl(ngx_processes[s].channel[0], FIOASYNC, &on)",
+                  "id": 40
+                },
+                "5": {
+                  "title": "fork()",
+                  "id": 41,
+                  "attr": {
+                    "style": {
+                      "background": "#808000"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "ngx_worker_process_cycle",
+                      "id": 42,
+                      "attr": {
+                        "style": {
+                          "background": "#008000"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "2": {
+          "title": "ngx_start_cache_manager_processes(cycle, 0)",
+          "id": 34
+        },
+        "3": {
+          "title": "master loop:  for ( ;; ){}",
+          "id": 35
+        }
+      }
+    },
+    "0.5": {
+      "title": "ngx_get_options(argc,argv)",
+      "id": 5,
+      "attr": {
+        "style": {},
+        "position": [
+          62,
+          -95.5,
+          1
+        ]
+      }
+    }
+  }
+}

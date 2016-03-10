@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.15" />
 
-  <title>xusiwei&#39;s blog</title>
+  <title>NGINX的并发模型 &middot; xusiwei&#39;s blog</title>
 
   
   <link rel="stylesheet" href="/css/pure/0.6.0/pure-min.css">
@@ -136,18 +136,12 @@
 
 
 <div class="header">
-  <h1>xusiwei&#39;s blog</h1>
-  <h2>A coder&#39;s daily</h2>
+  <h1>NGINX的并发模型</h1>
+  <h2></h2>
 </div>
-
 <div class="content">
-  
-    
-      <article>
-  <header>
-    <h2><a href="https://xusiwei.github.io/post/2016/nginx-concurrency-model/">NGINX的并发模型</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
@@ -168,10 +162,9 @@
 
 </div>
 
-  </header>
+  
 
-  <p>
-  <h2 id="apache-的并发模型:4a22d405802f88aaa6b5403c942c9b42">Apache 的并发模型</h2>
+<h2 id="apache-的并发模型:4a22d405802f88aaa6b5403c942c9b42">Apache 的并发模型</h2>
 
 <p>Apache 的早期版本的并发模型是 one process per connection，也是早期Unix服务端的主流模型：
 主进程accept阻塞在listen fd上，有新的HTTP请求到来时（accept返回connection fd），主进程fork一个服务进程，
@@ -223,297 +216,45 @@ master再通知它创建起来的其他进程。</p>
 
 <p>可以做 HTTP、文件缓存，即对同一个静态文件的请求进行缓存。</p>
 
-  </p>
+<h2 id="more:4a22d405802f88aaa6b5403c942c9b42">more</h2>
+
+<p><a href="http://www.aosabook.org/en/nginx.html">Chapter “nginx” in “The Architecture of Open Source Applications”</a></p>
+
 
   
-  <footer>
-    <a href="/post/2016/nginx-concurrency-model/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1 pure-u-md-1-2">
     
-  
-    
-      <article>
-  <header>
-    <h2><a href="https://xusiwei.github.io/post/2016/docker-get-start/">docker 入门指南</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>2016-03-08, 22:58</time>
   </div>
-
-  
-
-  
-  
-  
-  
-
-  
-  
-  
-  
-
+  <div class="pure-u-1 pure-u-md-1-2">
+    
+    <nav class="next">
+      <a href="https://xusiwei.github.io/post/2016/docker-get-start/">docker 入门指南<i class="fa fa-arrow-circle-right fa-fw fa-lg"></i></a>
+    </nav>
+    
+  </div>
 </div>
 
-  </header>
-
-  <p>
-  <p>本文是实践官方“Get Started”的一个记录，由于我的桌面系统是Debian 8，本文的操作仅确保在 Debian 8 上正确。
-指南链接（Linux版）： <a href="https://docs.docker.com/linux/">https://docs.docker.com/linux/</a></p>
-
-<h2 id="安装-docker:c57648232b8ca5cef6cec3c0bc434e73">安装 Docker</h2>
-
-<h3 id="官方脚本安装:c57648232b8ca5cef6cec3c0bc434e73">官方脚本安装</h3>
-
-<p>如果没有 curl ，先安装 curl</p>
-
-<pre><code>sudo apt-get update
-sudo apt-get install curl
-</code></pre>
-
-<p>用curl下载安装脚本并运行：</p>
-
-<pre><code>curl -fsSL https://get.docker.com/ | sh
-</code></pre>
-
-<p>安装成功后会提示你，使用如下命令：</p>
-
-<pre><code>sudo usermod -aG docker xu
-</code></pre>
-
-<p>将当前用户（xu）加到docker组，此后运行docker可以不加sudo。另外，让当前用户的组别改变需要重新登录（先log out再log in）。</p>
-
-<h3 id="验证:c57648232b8ca5cef6cec3c0bc434e73">验证</h3>
-
-<h3 id="bash:c57648232b8ca5cef6cec3c0bc434e73">bash</h3>
-
-<pre><code>docker run -i -t debian docker
-</code></pre>
-
-<p>可以用docker创建一个交互的bash会话，在新的会话中运行ps -ef：</p>
-
-<pre><code>xu@debian:~$ docker run -i -t debian bash
-root@d99cc11447c7:/#
-root@d99cc11447c7:/#
-root@d99cc11447c7:/# ps -ef
-UID        PID  PPID  C STIME TTY          TIME CMD
-root         1     0  2 15:32 ?        00:00:00 bash
-root         8     1  0 15:32 ?        00:00:00 ps -ef
-</code></pre>
-
-<p>可以看到，仅有两个进程，而且pid都非常小。这说明，这个会话环境已经与外界隔离了。</p>
-
-  </p>
-
-  
-  <footer>
-    <a href="/post/2016/docker-get-start/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-    
-  
-    
-      <article>
-  <header>
-    <h2><a href="https://xusiwei.github.io/post/2016/nginx-source-install/">NGINX 源码安装</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>2016-03-07, 23:35</time>
-  </div>
 
   
 
   
-  
-  
-  
 
-  
-  
-  
-  
+<div class="ds-thread" data-thread-key="/post/2016/nginx-concurrency-model/" data-title="NGINX的并发模型" data-url="https://xusiwei.github.io/post/2016/nginx-concurrency-model/"></div>
 
-</div>
 
-  </header>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"githubxu"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
 
-  <p>
-  <p>NIGNX 是由 Igor Sysoev 开发的一个 Web 服务器。
-官网：<a href="http://nginx.org/">http://nginx.org/</a></p>
-
-<p>下载页面： <a href="http://nginx.org/en/download.html">http://nginx.org/en/download.html</a></p>
-
-<h2 id="下载-nginx:52a4c6da7db903582370865375f9a938">下载 NGINX</h2>
-
-<p>以 1.8.1 版本为例：</p>
-
-<pre><code>wget http://nginx.org/download/nginx-1.8.1.tar.gz
-</code></pre>
-
-<h2 id="下载依赖库:52a4c6da7db903582370865375f9a938">下载依赖库</h2>
-
-<p>NGINX必须依赖zlib和pcre, (若想让nginx支持HTTPS协议，还需OpenSSL)</p>
-
-<p>NGINX 使用zlib进行gzip编/解码（压缩/解压缩）， zlib: <a href="http://zlib.net/">http://zlib.net/</a></p>
-
-<p>下载 zlib-1.2.8:</p>
-
-<pre><code>wget http://zlib.net/zlib-1.2.8.tar.gz
-</code></pre>
-
-<p>NGINX 使用pcre作正则表达式匹配， pcre: <a href="http://pcre.org/">http://pcre.org/</a></p>
-
-<p>ftp: <a href="ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/">ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/</a></p>
-
-<p>下载 pcre-8.38:</p>
-
-<pre><code>wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.38.tar.gz
-</code></pre>
-
-<h2 id="解压:52a4c6da7db903582370865375f9a938">解压</h2>
-
-<pre><code>tar xzvf nginx-1.8.1.tar.gz
-
-tar xzvf zlib-1.2.8.tar.gz
-
-tar xzvf pcre-8.38.tar.gz
-</code></pre>
-
-<h2 id="编译:52a4c6da7db903582370865375f9a938">编译</h2>
-
-<pre><code>cd nginx-1.8.1/
-
-./configure --with-pcre=../pcre-8.38 --with-zlib=../zlib-1.2.8
-</code></pre>
-
-<h2 id="安装:52a4c6da7db903582370865375f9a938">安装</h2>
-
-<pre><code>sudo make install
-</code></pre>
-
-  </p>
-
-  
-  <footer>
-    <a href="/post/2016/nginx-source-install/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-    
-  
-    
-      <article>
-  <header>
-    <h2><a href="https://xusiwei.github.io/post/2016/build-blog-with-hugo-and-github-pages/">用Hugo和GitHub Pages搭建博客</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>2016-02-21, 16:36</time>
-  </div>
-
-  
-
-  
-  
-  
-  
-
-  
-  
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  <p>从前天晚上开始尝试了一下用Hugo和GitHub Pages搭建静态博客，总体还算顺利（主要是Hugo用起来比较方便）。</p>
-
-<p><strong>关于 Hugo</strong></p>
-
-<p>Hugo 是由 spf13 创建的一个静态网站生成器，首页：<a href="https://www.gohugo.io/">https://www.gohugo.io/</a></p>
-
-<h1 id="hugo-工作流:12928e9650273f3ab009a12bccc3ed6e">Hugo 工作流</h1>
-
-<p>下面将介绍Hugo的完整工作流程：</p>
-
-<h2 id="快速安装:12928e9650273f3ab009a12bccc3ed6e">快速安装</h2>
-
-<p>在 <a href="https://www.gohugo.io/">https://www.gohugo.io/</a> 能够找到 Homebrew 安装 Hugo的命令，</p>
-
-<p>以及Download： <a href="https://github.com/spf13/hugo/releases">https://github.com/spf13/hugo/releases</a></p>
-
-<p>下载对应的操作系统版本的Hugo二进制文件（hugo或者hugo.exe），添加到<code>$PATH</code>能找到的目录下。</p>
-
-  </p>
-
-  
-  <footer>
-    <a href="/post/2016/build-blog-with-hugo-and-github-pages/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-    
-  
-    
-  
-    
-      <article>
-  <header>
-    <h2><a href="https://xusiwei.github.io/post/hello-world/">你好，世界</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>2016-02-19, 23:16</time>
-  </div>
-
-  
-
-  
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  <p>这是一篇测试博客，在这你将看到Hugo对Markdown的渲染效果。</p>
-
-<h1 id="关于-hugo:aa77bbfd89a7b0ff10def205b9c08d51">关于 Hugo</h1>
-
-<p>Hugo是一个静态网站生成器</p>
-
-  </p>
-
-  
-  <footer>
-    <a href="/post/hello-world/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-    
-  
-
-  
 
 
 </div>
