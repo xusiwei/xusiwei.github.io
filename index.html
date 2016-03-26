@@ -145,6 +145,82 @@
     
       <article>
   <header>
+    <h2><a href="https://xusiwei.github.io/post/2016/raspberry-pi-use-ustc-mirror/">Raspberry Pi 使用科大镜像源</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2016-03-26, 18:40</time>
+  </div>
+
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://xusiwei.github.io/tags/raspberry-pi">Raspberry Pi</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  <p><a href="http://mirrors.ustc.edu.cn/">科大开源镜像站</a>提供了raspbian的软件包镜像，国内的用户可以选择改用科大镜像站作为更新源。</p>
+
+<p>科大镜像站官方已经提供了一份<a href="https://lug.ustc.edu.cn/wiki/mirrors/help/raspbian">帮助文档</a>，用于指导用户如何使用科大镜像更新raspbian。
+但这份文档是基于 wheezy 的，最新的jessie版可以参考本文。</p>
+
+<h2 id="具体做法:1193d113f0dfa5b1e980baf9f09a2f49">具体做法</h2>
+
+<p>修改之前，最好先备份原始的配置文件。例如，使用如下命令将两个源配置文件拷贝到HOME目录。</p>
+
+<pre><code>cp /etc/apt/sources.list ~
+cp /etc/apt/sources.d/raspi.list ~
+</code></pre>
+
+<p>或者直接在原来配置文件的基础上修改，但将原有的配置全部注释掉（使用#注释）。</p>
+
+<h3 id="修改-source-list:1193d113f0dfa5b1e980baf9f09a2f49">修改 source.list</h3>
+
+<p>更新后的<code>/etc/apt/sources.list</code>：</p>
+
+<pre><code>#deb http://mirrordirector.raspbian.org/raspbian/ jessie main contrib non-free rpi
+# Uncomment line below then 'apt-get update' to enable 'apt-get source'
+#deb-src http://archive.raspbian.org/raspbian/ jessie main contrib non-free rpi
+
+# use ustc mirror:
+deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ jessie main contrib non-free rpi
+</code></pre>
+
+<p>实际修改是，将<code>mirrordirector.raspbian.org</code>替换为<code>mirrors.ustc.edu.cn/raspbian/</code>。</p>
+
+  </p>
+
+  
+  <footer>
+    <a href="/post/2016/raspberry-pi-use-ustc-mirror/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+    
+  
+    
+      <article>
+  <header>
     <h2><a href="https://xusiwei.github.io/post/2016/raspberry-pi-headless-setup/">Raspberry Pi 3 无显示器 安装指南</a></h2>
 
     <div class="post-meta">

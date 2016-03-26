@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.15" />
 
-  <title>Raspberry Pi &middot; xusiwei&#39;s blog</title>
+  <title>Raspberry Pi 使用科大镜像源 &middot; xusiwei&#39;s blog</title>
 
   
   <link rel="stylesheet" href="/css/pure/0.6.0/pure-min.css">
@@ -136,16 +136,12 @@
 
 
 <div class="header">
-  <h1>Raspberry Pi</h1>
+  <h1>Raspberry Pi 使用科大镜像源</h1>
+  <h2></h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="https://xusiwei.github.io/post/2016/raspberry-pi-use-ustc-mirror/">Raspberry Pi 使用科大镜像源</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
@@ -173,10 +169,9 @@
 
 </div>
 
-  </header>
+  
 
-  <p>
-  <p><a href="http://mirrors.ustc.edu.cn/">科大开源镜像站</a>提供了raspbian的软件包镜像，国内的用户可以选择改用科大镜像站作为更新源。</p>
+<p><a href="http://mirrors.ustc.edu.cn/">科大开源镜像站</a>提供了raspbian的软件包镜像，国内的用户可以选择改用科大镜像站作为更新源。</p>
 
 <p>科大镜像站官方已经提供了一份<a href="https://lug.ustc.edu.cn/wiki/mirrors/help/raspbian">帮助文档</a>，用于指导用户如何使用科大镜像更新raspbian。
 但这份文档是基于 wheezy 的，最新的jessie版可以参考本文。</p>
@@ -205,81 +200,57 @@ deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ jessie main contrib non-free r
 
 <p>实际修改是，将<code>mirrordirector.raspbian.org</code>替换为<code>mirrors.ustc.edu.cn/raspbian/</code>。</p>
 
-  </p>
+<h3 id="修改-raspi-list:1193d113f0dfa5b1e980baf9f09a2f49">修改 raspi.list</h3>
+
+<p>更新后的<code>/etc/apt/raspi.list</code>：</p>
+
+<pre><code>#deb http://archive.raspberrypi.org/debian/ jessie main ui
+# Uncomment line below then 'apt-get update' to enable 'apt-get source'
+#deb-src http://archive.raspberrypi.org/debian/ jessie main ui
+
+# use ustc mirror:
+deb http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ jessie main ui
+</code></pre>
+
+<p>实际修改是，将<code>archive.raspberrypi.org</code>替换为<code>mirrors.ustc.edu.cn/archive.raspberrypi.org</code>。</p>
+
 
   
-  <footer>
-    <a href="/post/2016/raspberry-pi-use-ustc-mirror/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://xusiwei.github.io/post/2016/raspberry-pi-headless-setup/">Raspberry Pi 3 无显示器 安装指南</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>2016-03-26, 09:31</time>
-  </div>
-
-  
-
-  
-  
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://xusiwei.github.io/tags/raspberry-pi">Raspberry Pi</a>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1 pure-u-md-1-2">
     
   </div>
-  
-  
-
+  <div class="pure-u-1 pure-u-md-1-2">
+    
+    <nav class="next">
+      <a href="https://xusiwei.github.io/post/2016/raspberry-pi-headless-setup/">Raspberry Pi 3 无显示器 安装指南<i class="fa fa-arrow-circle-right fa-fw fa-lg"></i></a>
+    </nav>
+    
+  </div>
 </div>
 
-  </header>
-
-  <p>
-  <p>本文记录了——在没有显示器、键盘的条件下，如何通过网线为树梅派（后面简称pi）安装系统。</p>
-
-<p>实验环境如下图。</p>
-
-<p><img src="/post/2016/raspi-rj45-laptop.png" alt="raspberrypi-rj45-laptop" /></p>
-
-<h2 id="下载系统镜像:1b28d5a7e7479bf802469f0b464e0ae5">下载系统镜像</h2>
-
-<p>官网的<a href="https://www.raspberrypi.org/downloads">下载页面</a>可以找到pi的系统镜像。</p>
-
-<p>官方首推新手使用的是NOOBS和raspbian，而NOOBS和Raspbian都提供了完整版和Lite版。</p>
-
-<p>NOOBS的完整版是包含了Raspbian，可以离线安装raspbian。Lite版仅有一个系统安装程序，需要连接网络才能安装具体的操作系统。</p>
-
-<p>Raspbian的完整版是一个完整的桌面镜像，Lite版预装的软件包要少一些（联网后可以继续安装）。</p>
-
-<p>我下载的是<a href="http://director.downloads.raspberrypi.org/raspbian/images/raspbian-2016-03-18/2016-03-18-raspbian-jessie.zip">RASPBIAN JESSIE</a></p>
-
-<p>下载完成后解压zip文件，将会得到一个img文件。</p>
-
-  </p>
 
   
-  <footer>
-    <a href="/post/2016/raspberry-pi-headless-setup/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
 
   
+
+<div class="ds-thread" data-thread-key="/post/2016/raspberry-pi-use-ustc-mirror/" data-title="Raspberry Pi 使用科大镜像源" data-url="https://xusiwei.github.io/post/2016/raspberry-pi-use-ustc-mirror/"></div>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"githubxu"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+
 </div>
 
 </div>
@@ -302,3 +273,4 @@ deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ jessie main contrib non-free r
 
 </body>
 </html>
+
