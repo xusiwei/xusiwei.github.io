@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.15" />
 
-  <title>NGINX的并发模型 &middot; xusiwei&#39;s blog</title>
+  <title>Nginx &middot; xusiwei&#39;s blog</title>
 
   
   <link rel="stylesheet" href="/css/pure/0.6.0/pure-min.css">
@@ -136,12 +136,16 @@
 
 
 <div class="header">
-  <h1>NGINX的并发模型</h1>
-  <h2></h2>
+  <h1>Nginx</h1>
 </div>
-<div class="content">
 
-  <div class="post-meta">
+<div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="https://xusiwei.github.io/post/2016/nginx-concurrency-model/">NGINX的并发模型</a></h2>
+
+    <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
@@ -176,9 +180,10 @@
 
 </div>
 
-  
+  </header>
 
-<h2 id="apache-的并发模型:4a22d405802f88aaa6b5403c942c9b42">Apache 的并发模型</h2>
+  <p>
+  <h2 id="apache-的并发模型:4a22d405802f88aaa6b5403c942c9b42">Apache 的并发模型</h2>
 
 <p>Apache 的早期版本的并发模型是 one process per connection，也是早期Unix服务端的主流模型：
 主进程accept阻塞在listen fd上，有新的HTTP请求到来时（accept返回connection fd），主进程fork一个服务进程，
@@ -230,51 +235,121 @@ master再通知它创建起来的其他进程。</p>
 
 <p>可以做 HTTP、文件缓存，即对同一个静态文件的请求进行缓存。</p>
 
-<h2 id="more:4a22d405802f88aaa6b5403c942c9b42">more</h2>
-
-<p><a href="http://www.aosabook.org/en/nginx.html">Chapter “nginx” in “The Architecture of Open Source Applications”</a></p>
-
+  </p>
 
   
-<div class="prev-next-post pure-g">
-  <div class="pure-u-1 pure-u-md-1-2">
+  <footer>
+    <a href="/post/2016/nginx-concurrency-model/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://xusiwei.github.io/post/2016/nginx-source-install/">NGINX 源码安装</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2016-03-07, 23:35</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
     
-    <nav class="prev">
-      <a href="https://xusiwei.github.io/post/2016/raspberry-pi-headless-setup/"><i class="fa fa-arrow-circle-left fa-fw fa-lg"></i>Raspberry Pi 3 无显示器 安装指南</a>
-    </nav>
+      <a class="post-taxonomy-topic" href="https://xusiwei.github.io/topics/ops">Ops</a>
     
   </div>
-  <div class="pure-u-1 pure-u-md-1-2">
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
     
-    <nav class="next">
-      <a href="https://xusiwei.github.io/post/2016/docker-get-start/">docker 入门指南<i class="fa fa-arrow-circle-right fa-fw fa-lg"></i></a>
-    </nav>
+      <a class="post-taxonomy-tag" href="https://xusiwei.github.io/tags/nginx">Nginx</a>
     
   </div>
+  
+  
+
 </div>
 
+  </header>
+
+  <p>
+  <p>NIGNX 是由 Igor Sysoev 开发的一个 Web 服务器。
+官网：<a href="http://nginx.org/">http://nginx.org/</a></p>
+
+<p>下载页面： <a href="http://nginx.org/en/download.html">http://nginx.org/en/download.html</a></p>
+
+<h2 id="下载-nginx:52a4c6da7db903582370865375f9a938">下载 NGINX</h2>
+
+<p>以 1.8.1 版本为例：</p>
+
+<pre><code>wget http://nginx.org/download/nginx-1.8.1.tar.gz
+</code></pre>
+
+<h2 id="下载依赖库:52a4c6da7db903582370865375f9a938">下载依赖库</h2>
+
+<p>NGINX必须依赖zlib和pcre, (若想让nginx支持HTTPS协议，还需OpenSSL)</p>
+
+<p>NGINX 使用zlib进行gzip编/解码（压缩/解压缩）， zlib: <a href="http://zlib.net/">http://zlib.net/</a></p>
+
+<p>下载 zlib-1.2.8:</p>
+
+<pre><code>wget http://zlib.net/zlib-1.2.8.tar.gz
+</code></pre>
+
+<p>NGINX 使用pcre作正则表达式匹配， pcre: <a href="http://pcre.org/">http://pcre.org/</a></p>
+
+<p>ftp: <a href="ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/">ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/</a></p>
+
+<p>下载 pcre-8.38:</p>
+
+<pre><code>wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.38.tar.gz
+</code></pre>
+
+<h2 id="解压:52a4c6da7db903582370865375f9a938">解压</h2>
+
+<pre><code>tar xzvf nginx-1.8.1.tar.gz
+
+tar xzvf zlib-1.2.8.tar.gz
+
+tar xzvf pcre-8.38.tar.gz
+</code></pre>
+
+<h2 id="编译:52a4c6da7db903582370865375f9a938">编译</h2>
+
+<pre><code>cd nginx-1.8.1/
+
+./configure --with-pcre=../pcre-8.38 --with-zlib=../zlib-1.2.8
+</code></pre>
+
+<h2 id="安装:52a4c6da7db903582370865375f9a938">安装</h2>
+
+<pre><code>sudo make install
+</code></pre>
+
+  </p>
 
   
+  <footer>
+    <a href="/post/2016/nginx-source-install/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
 
   
-
-<div class="ds-thread" data-thread-key="/post/2016/nginx-concurrency-model/" data-title="NGINX的并发模型" data-url="https://xusiwei.github.io/post/2016/nginx-concurrency-model/"></div>
-
-
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"githubxu"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0]
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-</script>
-
-
-
 </div>
 
 </div>
@@ -297,4 +372,3 @@ var duoshuoQuery = {short_name:"githubxu"};
 
 </body>
 </html>
-

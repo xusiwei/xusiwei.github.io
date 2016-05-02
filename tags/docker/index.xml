@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on xusiwei&#39;s blog</title>
+    <link>https://xusiwei.github.io/tags/docker/</link>
+    <description>Recent content in Docker on xusiwei&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 08 Mar 2016 22:58:33 +0800</lastBuildDate>
+    <atom:link href="https://xusiwei.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>docker 入门指南</title>
+      <link>https://xusiwei.github.io/post/2016/docker-get-start/</link>
+      <pubDate>Tue, 08 Mar 2016 22:58:33 +0800</pubDate>
+      
+      <guid>https://xusiwei.github.io/post/2016/docker-get-start/</guid>
+      <description>
+
+&lt;p&gt;本文是实践官方“Get Started”的一个记录，由于我的桌面系统是Debian 8，本文的操作仅确保在 Debian 8 上正确。
+指南链接（Linux版）： &lt;a href=&#34;https://docs.docker.com/linux/&#34;&gt;https://docs.docker.com/linux/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;安装-docker:c57648232b8ca5cef6cec3c0bc434e73&#34;&gt;安装 Docker&lt;/h2&gt;
+
+&lt;h3 id=&#34;官方脚本安装:c57648232b8ca5cef6cec3c0bc434e73&#34;&gt;官方脚本安装&lt;/h3&gt;
+
+&lt;p&gt;如果没有 curl ，先安装 curl&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get install curl
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;用curl下载安装脚本并运行：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;curl -fsSL https://get.docker.com/ | sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装成功后会提示你，使用如下命令：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo usermod -aG docker xu
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;将当前用户（xu）加到docker组，此后运行docker可以不加sudo。另外，让当前用户的组别改变需要重新登录（先log out再log in）。&lt;/p&gt;
+
+&lt;h3 id=&#34;验证:c57648232b8ca5cef6cec3c0bc434e73&#34;&gt;验证&lt;/h3&gt;
+
+&lt;h3 id=&#34;bash:c57648232b8ca5cef6cec3c0bc434e73&#34;&gt;bash&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;docker run -i -t debian docker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可以用docker创建一个交互的bash会话，在新的会话中运行ps -ef：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;xu@debian:~$ docker run -i -t debian bash
+root@d99cc11447c7:/#
+root@d99cc11447c7:/#
+root@d99cc11447c7:/# ps -ef
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  2 15:32 ?        00:00:00 bash
+root         8     1  0 15:32 ?        00:00:00 ps -ef
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可以看到，仅有两个进程，而且pid都非常小。这说明，这个会话环境已经与外界隔离了。&lt;/p&gt;
+
+&lt;h4 id=&#34;hello-world:c57648232b8ca5cef6cec3c0bc434e73&#34;&gt;hello world&lt;/h4&gt;
+
+&lt;p&gt;安装成功后，验证：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;user@host$ docker run hello-world
+Unable to find image &#39;hello-world:latest&#39; locally
+latest: Pulling from library/hello-world
+535020c3e8ad: Pull complete
+af340544ed62: Pull complete
+Digest: sha256:a68868bfe696c00866942e8f5ca39e3e31b79c1e50feaee4ce5e28df2f051d5c
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker.
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker Engine CLI client contacted the Docker Engine daemon.
+ 2. The Docker Engine daemon pulled the &amp;quot;hello-world&amp;quot; image from the Docker Hub.
+ 3. The Docker Engine daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker Engine daemon streamed that output to the Docker Engine CLI client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker Hub account:
+ https://hub.docker.com
+
+For more examples and ideas, visit:
+ https://docs.docker.com/userguide/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其中，&lt;code&gt;Hello from Docker.&lt;/code&gt;及以后的内容是docker运行的结果，前面是镜像下载的log。&lt;/p&gt;
+
+&lt;h3 id=&#34;软件源安装:c57648232b8ca5cef6cec3c0bc434e73&#34;&gt;软件源安装&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install docker-engine
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;通常版本较低（不推荐）。&lt;/p&gt;
+
+&lt;h2 id=&#34;关于image和container:c57648232b8ca5cef6cec3c0bc434e73&#34;&gt;关于image和container&lt;/h2&gt;
+
+&lt;p&gt;刚才的一个&lt;code&gt;docker run hello-world&lt;/code&gt;命令，包含了docker引擎的主要工作，命令的三部分：
+&lt;img src=&#34;https://xusiwei.github.io/post/2016/docker-cmd-struct.png&#34; alt=&#34;docker command structure&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;container&lt;/code&gt;（容器）是一个最精简的Linux操作系统。&lt;code&gt;image&lt;/code&gt;（镜像）是可以装载到&lt;code&gt;container&lt;/code&gt;的软件。
+敲下hello-world命令后，docker引擎：
+* 检查本地是否已经有&lt;code&gt;hello-world&lt;/code&gt;镜像
+* 如果没有，从Docker Hub下载该镜像
+* 将镜像装入容器并运行它&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;hello-world&lt;/code&gt;进行输出一些信息后就退出了。一般情况下，镜像的具体行为和它的构建过程有关。&lt;/p&gt;
+
+&lt;p&gt;Docker镜像的功能远不至于此，它可以是像数据库那样的复杂软件，运行后等待你（或其他人）向其中添加数据。&lt;/p&gt;
+
+&lt;p&gt;Docker引擎让创建并分享软件变得简单——Docker容器总能保证镜像能够运行。&lt;/p&gt;
+
+&lt;h2 id=&#34;寻找-运行别人创建的镜像-docker-hub:c57648232b8ca5cef6cec3c0bc434e73&#34;&gt;寻找、运行别人创建的镜像 —— Docker Hub&lt;/h2&gt;
+
+&lt;p&gt;Docker Hub和GitHub类似，只是Docker Hub上托管的是Docker镜像而不是源码，这里你同样可给关注的镜像star。&lt;/p&gt;
+
+&lt;p&gt;在Docker Hub上能找到来自世界各地的人创建的docker镜像，docker hub的explore和GitHub的explore也非常类似，可在浏览其他人都创建了那些镜像，也能够看到各个镜像有多少star。&lt;/p&gt;
+
+&lt;p&gt;官方的&lt;code&gt;Get Started&lt;/code&gt;里面以whalesay为例演示了如何用Docker Hub：
+1. 在Docker Hub上搜索whalesay镜像
+2. 运行whalesay镜像&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker run docker/whalesay cowsay boo
+_____
+&amp;lt; boo &amp;gt;
+-----
+   \
+    \
+     \
+                   ##        .
+             ## ## ##       ==
+          ## ## ## ##      ===
+      /&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;___/ ===
+ ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ /  ===- ~~~
+      \______ o          __/
+       \    \        __/
+         \____\______/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;whalesay是一个基于ubuntu 14.04构建的、命令行下输出字符图像的镜像，just for fun。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

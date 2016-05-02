@@ -143,6 +143,103 @@
   
     <article>
   <header>
+    <h2><a href="https://xusiwei.github.io/post/2016/docker-get-start/">docker 入门指南</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2016-03-08, 22:58</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://xusiwei.github.io/topics/ops">Ops</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://xusiwei.github.io/tags/docker">Docker</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  <p>本文是实践官方“Get Started”的一个记录，由于我的桌面系统是Debian 8，本文的操作仅确保在 Debian 8 上正确。
+指南链接（Linux版）： <a href="https://docs.docker.com/linux/">https://docs.docker.com/linux/</a></p>
+
+<h2 id="安装-docker:c57648232b8ca5cef6cec3c0bc434e73">安装 Docker</h2>
+
+<h3 id="官方脚本安装:c57648232b8ca5cef6cec3c0bc434e73">官方脚本安装</h3>
+
+<p>如果没有 curl ，先安装 curl</p>
+
+<pre><code>sudo apt-get update
+sudo apt-get install curl
+</code></pre>
+
+<p>用curl下载安装脚本并运行：</p>
+
+<pre><code>curl -fsSL https://get.docker.com/ | sh
+</code></pre>
+
+<p>安装成功后会提示你，使用如下命令：</p>
+
+<pre><code>sudo usermod -aG docker xu
+</code></pre>
+
+<p>将当前用户（xu）加到docker组，此后运行docker可以不加sudo。另外，让当前用户的组别改变需要重新登录（先log out再log in）。</p>
+
+<h3 id="验证:c57648232b8ca5cef6cec3c0bc434e73">验证</h3>
+
+<h3 id="bash:c57648232b8ca5cef6cec3c0bc434e73">bash</h3>
+
+<pre><code>docker run -i -t debian docker
+</code></pre>
+
+<p>可以用docker创建一个交互的bash会话，在新的会话中运行ps -ef：</p>
+
+<pre><code>xu@debian:~$ docker run -i -t debian bash
+root@d99cc11447c7:/#
+root@d99cc11447c7:/#
+root@d99cc11447c7:/# ps -ef
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  2 15:32 ?        00:00:00 bash
+root         8     1  0 15:32 ?        00:00:00 ps -ef
+</code></pre>
+
+<p>可以看到，仅有两个进程，而且pid都非常小。这说明，这个会话环境已经与外界隔离了。</p>
+
+  </p>
+
+  
+  <footer>
+    <a href="/post/2016/docker-get-start/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
     <h2><a href="https://xusiwei.github.io/post/2016/nginx-source-install/">NGINX 源码安装</a></h2>
 
     <div class="post-meta">
@@ -160,8 +257,6 @@
   <div>
     <i class="fa fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="https://xusiwei.github.io/topics/nginx">Nginx</a>&nbsp;&#47;
-    
       <a class="post-taxonomy-topic" href="https://xusiwei.github.io/topics/ops">Ops</a>
     
   </div>
@@ -170,6 +265,13 @@
 
   
   
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://xusiwei.github.io/tags/nginx">Nginx</a>
+    
+  </div>
   
   
 

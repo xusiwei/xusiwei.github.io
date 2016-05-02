@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Misc on xusiwei&#39;s blog</title>
+    <link>https://xusiwei.github.io/topics/misc/</link>
+    <description>Recent content in Misc on xusiwei&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 21 Feb 2016 16:36:54 +0800</lastBuildDate>
+    <atom:link href="https://xusiwei.github.io/topics/misc/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>用Hugo和GitHub Pages搭建博客</title>
+      <link>https://xusiwei.github.io/post/2016/build-blog-with-hugo-and-github-pages/</link>
+      <pubDate>Sun, 21 Feb 2016 16:36:54 +0800</pubDate>
+      
+      <guid>https://xusiwei.github.io/post/2016/build-blog-with-hugo-and-github-pages/</guid>
+      <description>
+
+&lt;p&gt;从前天晚上开始尝试了一下用Hugo和GitHub Pages搭建静态博客，总体还算顺利（主要是Hugo用起来比较方便）。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;关于 Hugo&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Hugo 是由 spf13 创建的一个静态网站生成器，首页：&lt;a href=&#34;https://www.gohugo.io/&#34;&gt;https://www.gohugo.io/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;hugo-工作流:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;Hugo 工作流&lt;/h1&gt;
+
+&lt;p&gt;下面将介绍Hugo的完整工作流程：&lt;/p&gt;
+
+&lt;h2 id=&#34;快速安装:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;快速安装&lt;/h2&gt;
+
+&lt;p&gt;在 &lt;a href=&#34;https://www.gohugo.io/&#34;&gt;https://www.gohugo.io/&lt;/a&gt; 能够找到 Homebrew 安装 Hugo的命令，&lt;/p&gt;
+
+&lt;p&gt;以及Download： &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;https://github.com/spf13/hugo/releases&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;下载对应的操作系统版本的Hugo二进制文件（hugo或者hugo.exe），添加到&lt;code&gt;$PATH&lt;/code&gt;能找到的目录下。&lt;/p&gt;
+
+&lt;h2 id=&#34;创建站点:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;创建站点&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ hugo new mysite
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;会在mysite目录生成原始（未经渲染的）站点，如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd mysite
+$ tree mysite
+.
+├── archetypes
+├── config.toml
+├── content
+├── data
+├── layouts
+└── static
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;创建文章:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;创建文章&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ hugo new about.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;会在content下创建一个about.md。&lt;/p&gt;
+
+&lt;h2 id=&#34;安装主题:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;安装主题&lt;/h2&gt;
+
+&lt;p&gt;在 &lt;a href=&#34;http://themes.gohugo.io/&#34;&gt;http://themes.gohugo.io/&lt;/a&gt; 选号主题之后，将对应主题下载到 &lt;code&gt;themes/&lt;/code&gt; 下，如hyde。&lt;/p&gt;
+
+&lt;h3 id=&#34;配置主题:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;配置主题&lt;/h3&gt;
+
+&lt;p&gt;不同主题会有不同可配置的参数，按照说明修改config.toml即可。&lt;/p&gt;
+
+&lt;h2 id=&#34;生成页面:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;生成页面&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo --theme=hyde
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;该命令会将所有md渲染成HTML。&lt;/p&gt;
+
+&lt;h3 id=&#34;本地预览:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;本地预览&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo server --theme=hyde --buildDrafts --watch
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可在本地预览渲染效果。&lt;/p&gt;
+
+&lt;h2 id=&#34;发布:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;发布&lt;/h2&gt;
+
+&lt;p&gt;hugo命令默认生成html到 &lt;code&gt;public/&lt;/code&gt; 下，可用 &lt;code&gt;-d&lt;/code&gt; 选项渲染结果指向其他目录，
+或者在执行hugo命令前将 创建软连接 public 指向其他目录。&lt;/p&gt;
+
+&lt;p&gt;GitHug Pages提供了静态网页和Jeklly生成器功能，可以在 &lt;code&gt;USERNAME.githug.io&lt;/code&gt; 仓库
+或其他仓库的&lt;code&gt;gh-pages&lt;/code&gt;分支部署静态网页，或Jeklly原始页面。&lt;/p&gt;
+
+&lt;h1 id=&#34;hugo-jeklly-hexo-简单对比:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;Hugo, Jeklly, Hexo 简单对比&lt;/h1&gt;
+
+&lt;p&gt;在使用 Hugo 之前，我先后尝试了 Hexo、Jeklly， 说说感受。
+Hexo的npm安装需要依赖很多其他node库，在网络条件不好的情况下，光安装就很费劲。
+Jeklly也是，虽然相对Hexo来说依赖要少一些，但安装其他还是略显麻烦。&lt;/p&gt;
+
+&lt;p&gt;在经历过Hexo, Jeklly的痛苦之后，在安装Hugo的时候我直接选择了二进制安装。
+这可能和实现技术有关。Hugo, Jeklly, Hexo分别是基于Go, Ruby, Node.js。
+Go的编译型语言特性让Hugo&lt;strong&gt;更容易&lt;/strong&gt;“二进制安装”。&lt;/p&gt;
+
+&lt;p&gt;所以相对来说，Hugo的主要优势在于安装方便，据说生成速度也更快。&lt;/p&gt;
+
+&lt;h1 id=&#34;github-pages-相对其他博客的好处:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;GitHub Pages 相对其他博客的好处&lt;/h1&gt;
+
+&lt;p&gt;对于程序员来说，GitHub Pages相对于：
+1. 注册类的博客网站，如CSDN
+2. 自建独立博客，如WrodPress&lt;/p&gt;
+
+&lt;p&gt;GitHub Pages方式的好处在于————可以象管理代码一样管理博客，用git管理博客变更。&lt;/p&gt;
+
+&lt;p&gt;正如 &lt;a href=&#34;https://github.com/ruanyf&#34;&gt;@ruanyf&lt;/a&gt; 所说，“他们既拥有绝对管理权，
+又享受github带来的便利&amp;mdash;-不管何时何地，只要向主机提交commit，就能发布新文章。
+更妙的是，这一切还是免费的，github提供无限流量，世界各地都有理想的访问速度。”&lt;/p&gt;
+
+&lt;h1 id=&#34;参考链接:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;参考链接&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;hugo中文文档 &lt;a href=&#34;http://gohugo.org/&#34;&gt;gohugo.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.coderzh.com/2015/08/29/hugo/&#34;&gt;http://blog.coderzh.com/2015/08/29/hugo/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html&#34;&gt;http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
