@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Siwei Xu</title>
+    <link>https://xusiwei.github.io/tags/Hugo/</link>
+    <description>Recent content in Hugo on Siwei Xu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 21 Feb 2016 16:36:54 +0800</lastBuildDate>
+    
+	<atom:link href="https://xusiwei.github.io/tags/Hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>用Hugo和GitHub Pages搭建博客</title>
+      <link>https://xusiwei.github.io/post/2016/build-blog-with-hugo-and-github-pages/</link>
+      <pubDate>Sun, 21 Feb 2016 16:36:54 +0800</pubDate>
+      
+      <guid>https://xusiwei.github.io/post/2016/build-blog-with-hugo-and-github-pages/</guid>
+      <description>&lt;p&gt;从前天晚上开始尝试了一下用Hugo和GitHub Pages搭建静态博客，总体还算顺利（主要是Hugo用起来比较方便）。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;关于 Hugo&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Hugo 是由 spf13 创建的一个静态网站生成器，首页：&lt;a href=&#34;https://www.gohugo.io/&#34;&gt;https://www.gohugo.io/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;hugo-工作流&#34;&gt;Hugo 工作流&lt;/h1&gt;
+
+&lt;p&gt;下面将介绍Hugo的完整工作流程：&lt;/p&gt;
+
+&lt;h2 id=&#34;快速安装&#34;&gt;快速安装&lt;/h2&gt;
+
+&lt;p&gt;在 &lt;a href=&#34;https://www.gohugo.io/&#34;&gt;https://www.gohugo.io/&lt;/a&gt; 能够找到 Homebrew 安装 Hugo的命令，&lt;/p&gt;
+
+&lt;p&gt;以及Download： &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;https://github.com/spf13/hugo/releases&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;下载对应的操作系统版本的Hugo二进制文件（hugo或者hugo.exe），添加到&lt;code&gt;$PATH&lt;/code&gt;能找到的目录下。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

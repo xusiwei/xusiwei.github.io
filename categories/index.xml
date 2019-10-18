@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Siwei Xu</title>
+    <link>https://xusiwei.github.io/categories/</link>
+    <description>Recent content in Categories on Siwei Xu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 26 Mar 2016 18:40:13 +0800</lastBuildDate>
+    
+	<atom:link href="https://xusiwei.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>开源硬件</title>
+      <link>https://xusiwei.github.io/categories/%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6/</link>
+      <pubDate>Sat, 26 Mar 2016 18:40:13 +0800</pubDate>
+      
+      <guid>https://xusiwei.github.io/categories/%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>开源软件</title>
+      <link>https://xusiwei.github.io/categories/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/</link>
+      <pubDate>Wed, 09 Mar 2016 23:38:56 +0800</pubDate>
+      
+      <guid>https://xusiwei.github.io/categories/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>使用指南</title>
+      <link>https://xusiwei.github.io/categories/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Tue, 08 Mar 2016 22:58:33 +0800</pubDate>
+      
+      <guid>https://xusiwei.github.io/categories/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>开源硬件 on Siwei Xu</title>
+    <link>https://xusiwei.github.io/categories/%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6/</link>
+    <description>Recent content in 开源硬件 on Siwei Xu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 26 Mar 2016 18:40:13 +0800</lastBuildDate>
+    
+	<atom:link href="https://xusiwei.github.io/categories/%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Raspberry Pi 使用科大镜像源</title>
+      <link>https://xusiwei.github.io/post/2016/raspberry-pi-use-ustc-mirror/</link>
+      <pubDate>Sat, 26 Mar 2016 18:40:13 +0800</pubDate>
+      
+      <guid>https://xusiwei.github.io/post/2016/raspberry-pi-use-ustc-mirror/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://mirrors.ustc.edu.cn/&#34;&gt;科大开源镜像站&lt;/a&gt;提供了raspbian的软件包镜像，国内的用户可以选择改用科大镜像站作为更新源。&lt;/p&gt;
+
+&lt;p&gt;科大镜像站官方已经提供了一份&lt;a href=&#34;https://lug.ustc.edu.cn/wiki/mirrors/help/raspbian&#34;&gt;帮助文档&lt;/a&gt;，用于指导用户如何使用科大镜像更新raspbian。
+但这份文档是基于 wheezy 的，最新的jessie版可以参考本文。&lt;/p&gt;
+
+&lt;h2 id=&#34;具体做法&#34;&gt;具体做法&lt;/h2&gt;
+
+&lt;p&gt;修改之前，最好先备份原始的配置文件。例如，使用如下命令将两个源配置文件拷贝到HOME目录。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp /etc/apt/sources.list ~
+cp /etc/apt/sources.d/raspi.list ~
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;或者直接在原来配置文件的基础上修改，但将原有的配置全部注释掉（使用#注释）。&lt;/p&gt;
+
+&lt;h3 id=&#34;修改-source-list&#34;&gt;修改 source.list&lt;/h3&gt;
+
+&lt;p&gt;更新后的&lt;code&gt;/etc/apt/sources.list&lt;/code&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#deb http://mirrordirector.raspbian.org/raspbian/ jessie main contrib non-free rpi
+# Uncomment line below then &#39;apt-get update&#39; to enable &#39;apt-get source&#39;
+#deb-src http://archive.raspbian.org/raspbian/ jessie main contrib non-free rpi
+
+# use ustc mirror:
+deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ jessie main contrib non-free rpi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;实际修改是，将&lt;code&gt;mirrordirector.raspbian.org&lt;/code&gt;替换为&lt;code&gt;mirrors.ustc.edu.cn/raspbian/&lt;/code&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi 3 无显示器 安装指南</title>
+      <link>https://xusiwei.github.io/post/2016/raspberry-pi-headless-setup/</link>
+      <pubDate>Sat, 26 Mar 2016 09:31:01 +0800</pubDate>
+      
+      <guid>https://xusiwei.github.io/post/2016/raspberry-pi-headless-setup/</guid>
+      <description>&lt;p&gt;本文记录了——在没有显示器、键盘的条件下，如何通过网线为树梅派（后面简称pi）安装系统。&lt;/p&gt;
+
+&lt;p&gt;实验环境如下图。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://xusiwei.github.io/post/2016/raspi-rj45-laptop.png&#34; alt=&#34;raspberrypi-rj45-laptop&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;下载系统镜像&#34;&gt;下载系统镜像&lt;/h2&gt;
+
+&lt;p&gt;官网的&lt;a href=&#34;https://www.raspberrypi.org/downloads&#34;&gt;下载页面&lt;/a&gt;可以找到pi的系统镜像。&lt;/p&gt;
+
+&lt;p&gt;官方首推新手使用的是NOOBS和raspbian，而NOOBS和Raspbian都提供了完整版和Lite版。&lt;/p&gt;
+
+&lt;p&gt;NOOBS的完整版是包含了Raspbian，可以离线安装raspbian。Lite版仅有一个系统安装程序，需要连接网络才能安装具体的操作系统。&lt;/p&gt;
+
+&lt;p&gt;Raspbian的完整版是一个完整的桌面镜像，Lite版预装的软件包要少一些（联网后可以继续安装）。&lt;/p&gt;
+
+&lt;p&gt;我下载的是&lt;a href=&#34;http://director.downloads.raspberrypi.org/raspbian/images/raspbian-2016-03-18/2016-03-18-raspbian-jessie.zip&#34;&gt;RASPBIAN JESSIE&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;下载完成后解压zip文件，将会得到一个img文件。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

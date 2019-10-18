@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on Siwei Xu</title>
+    <link>https://xusiwei.github.io/tags/Docker/</link>
+    <description>Recent content in Docker on Siwei Xu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 08 Mar 2016 22:58:33 +0800</lastBuildDate>
+    
+	<atom:link href="https://xusiwei.github.io/tags/Docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>docker 入门指南</title>
+      <link>https://xusiwei.github.io/post/2016/docker-get-start/</link>
+      <pubDate>Tue, 08 Mar 2016 22:58:33 +0800</pubDate>
+      
+      <guid>https://xusiwei.github.io/post/2016/docker-get-start/</guid>
+      <description>&lt;p&gt;本文是实践官方“Get Started”的一个记录，由于我的桌面系统是Debian 8，本文的操作仅确保在 Debian 8 上正确。
+指南链接（Linux版）： &lt;a href=&#34;https://docs.docker.com/linux/&#34;&gt;https://docs.docker.com/linux/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;安装-docker&#34;&gt;安装 Docker&lt;/h2&gt;
+
+&lt;h3 id=&#34;官方脚本安装&#34;&gt;官方脚本安装&lt;/h3&gt;
+
+&lt;p&gt;如果没有 curl ，先安装 curl&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get install curl
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;用curl下载安装脚本并运行：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;curl -fsSL https://get.docker.com/ | sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装成功后会提示你，使用如下命令：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo usermod -aG docker xu
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;将当前用户（xu）加到docker组，此后运行docker可以不加sudo。另外，让当前用户的组别改变需要重新登录（先log out再log in）。&lt;/p&gt;
+
+&lt;h3 id=&#34;验证&#34;&gt;验证&lt;/h3&gt;
+
+&lt;h3 id=&#34;bash&#34;&gt;bash&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;docker run -i -t debian docker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可以用docker创建一个交互的bash会话，在新的会话中运行ps -ef：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;xu@debian:~$ docker run -i -t debian bash
+root@d99cc11447c7:/#
+root@d99cc11447c7:/#
+root@d99cc11447c7:/# ps -ef
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  2 15:32 ?        00:00:00 bash
+root         8     1  0 15:32 ?        00:00:00 ps -ef
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可以看到，仅有两个进程，而且pid都非常小。这说明，这个会话环境已经与外界隔离了。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.58.3" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>使用指南 | Siwei Xu</title>
+    <meta property="og:title" content="使用指南 - Siwei Xu">
+    <meta property="og:type" content="article">
+        
+        
+    <meta name="Keywords" content="android,c&#43;&#43;,go,golang,java,python,软件架构,机器学习">
+    <meta name="description" content="使用指南">
+        
+    <meta name="author" content="Siwei Xu">
+    <meta property="og:url" content="https://xusiwei.github.io/categories/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="alternate" type="application/rss+xml+xml" href="https://xusiwei.github.io/categories/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index.xml" title="Siwei Xu" />
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://xusiwei.github.io/">
+                        Siwei Xu
+                    </a>
+                
+                <p class="description">专注C&#43;&#43;、Linux、Android</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://xusiwei.github.io/">首页</a>
+                    
+                    <a  href="https://xusiwei.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://xusiwei.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    
+                    <h3 class="archive-title">
+                        分类
+                        <span class="keyword">使用指南</span>
+                        中的文章
+                    </h3>
+                    
+
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://xusiwei.github.io/post/2016/docker-get-start/">docker 入门指南</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2016年3月8日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://xusiwei.github.io/categories/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97">使用指南</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <p>本文是实践官方“Get Started”的一个记录，由于我的桌面系统是Debian 8，本文的操作仅确保在 Debian 8 上正确。
+指南链接（Linux版）： <a href="https://docs.docker.com/linux/">https://docs.docker.com/linux/</a></p>
+
+<h2 id="安装-docker">安装 Docker</h2>
+
+<h3 id="官方脚本安装">官方脚本安装</h3>
+
+<p>如果没有 curl ，先安装 curl</p>
+
+<pre><code>sudo apt-get update
+sudo apt-get install curl
+</code></pre>
+
+<p>用curl下载安装脚本并运行：</p>
+
+<pre><code>curl -fsSL https://get.docker.com/ | sh
+</code></pre>
+
+<p>安装成功后会提示你，使用如下命令：</p>
+
+<pre><code>sudo usermod -aG docker xu
+</code></pre>
+
+<p>将当前用户（xu）加到docker组，此后运行docker可以不加sudo。另外，让当前用户的组别改变需要重新登录（先log out再log in）。</p>
+
+<h3 id="验证">验证</h3>
+
+<h3 id="bash">bash</h3>
+
+<pre><code>docker run -i -t debian docker
+</code></pre>
+
+<p>可以用docker创建一个交互的bash会话，在新的会话中运行ps -ef：</p>
+
+<pre><code>xu@debian:~$ docker run -i -t debian bash
+root@d99cc11447c7:/#
+root@d99cc11447c7:/#
+root@d99cc11447c7:/# ps -ef
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  2 15:32 ?        00:00:00 bash
+root         8     1  0 15:32 ?        00:00:00 ps -ef
+</code></pre>
+
+<p>可以看到，仅有两个进程，而且pid都非常小。这说明，这个会话环境已经与外界隔离了。</p>……
+                                <p class="readmore"><a href="https://xusiwei.github.io/post/2016/docker-get-start/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://xusiwei.github.io/post/2016/nginx-source-install/">NGINX 源码安装</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2016年3月7日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://xusiwei.github.io/categories/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97">使用指南</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <p>NIGNX 是由 Igor Sysoev 开发的一个 Web 服务器。
+官网：<a href="http://nginx.org/">http://nginx.org/</a></p>
+
+<p>下载页面： <a href="http://nginx.org/en/download.html">http://nginx.org/en/download.html</a></p>
+
+<h2 id="下载-nginx">下载 NGINX</h2>
+
+<p>以 1.8.1 版本为例：</p>
+
+<pre><code>wget http://nginx.org/download/nginx-1.8.1.tar.gz
+</code></pre>
+
+<h2 id="下载依赖库">下载依赖库</h2>
+
+<p>NGINX必须依赖zlib和pcre, (若想让nginx支持HTTPS协议，还需OpenSSL)</p>
+
+<p>NGINX 使用zlib进行gzip编/解码（压缩/解压缩）， zlib: <a href="http://zlib.net/">http://zlib.net/</a></p>
+
+<p>下载 zlib-1.2.8:</p>
+
+<pre><code>wget http://zlib.net/zlib-1.2.8.tar.gz
+</code></pre>
+
+<p>NGINX 使用pcre作正则表达式匹配， pcre: <a href="http://pcre.org/">http://pcre.org/</a></p>
+
+<p>ftp: <a href="ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/">ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/</a></p>
+
+<p>下载 pcre-8.38:</p>
+
+<pre><code>wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.38.tar.gz
+</code></pre>
+
+<h2 id="解压">解压</h2>
+
+<pre><code>tar xzvf nginx-1.8.1.tar.gz
+
+tar xzvf zlib-1.2.8.tar.gz
+
+tar xzvf pcre-8.38.tar.gz
+</code></pre>
+
+<h2 id="编译">编译</h2>
+
+<pre><code>cd nginx-1.8.1/
+
+./configure --with-pcre=../pcre-8.38 --with-zlib=../zlib-1.2.8
+</code></pre>
+
+<h2 id="安装">安装</h2>
+
+<pre><code>sudo make install
+</code></pre>……
+                                <p class="readmore"><a href="https://xusiwei.github.io/post/2016/nginx-source-install/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://xusiwei.github.io/post/2016/build-blog-with-hugo-and-github-pages/">用Hugo和GitHub Pages搭建博客</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2016年2月21日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://xusiwei.github.io/categories/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97">使用指南</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <p>从前天晚上开始尝试了一下用Hugo和GitHub Pages搭建静态博客，总体还算顺利（主要是Hugo用起来比较方便）。</p>
+
+<p><strong>关于 Hugo</strong></p>
+
+<p>Hugo 是由 spf13 创建的一个静态网站生成器，首页：<a href="https://www.gohugo.io/">https://www.gohugo.io/</a></p>
+
+<h1 id="hugo-工作流">Hugo 工作流</h1>
+
+<p>下面将介绍Hugo的完整工作流程：</p>
+
+<h2 id="快速安装">快速安装</h2>
+
+<p>在 <a href="https://www.gohugo.io/">https://www.gohugo.io/</a> 能够找到 Homebrew 安装 Hugo的命令，</p>
+
+<p>以及Download： <a href="https://github.com/spf13/hugo/releases">https://github.com/spf13/hugo/releases</a></p>
+
+<p>下载对应的操作系统版本的Hugo二进制文件（hugo或者hugo.exe），添加到<code>$PATH</code>能找到的目录下。</p>……
+                                <p class="readmore"><a href="https://xusiwei.github.io/post/2016/build-blog-with-hugo-and-github-pages/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+
+                    
+
+
+
+
+
+                </div>
+            </div>
+
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://xusiwei.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://xusiwei.github.io/post/2016/raspberry-pi-use-ustc-mirror/" title="Raspberry Pi 使用科大镜像源">Raspberry Pi 使用科大镜像源</a>
+    </li>
+    
+    <li>
+        <a href="https://xusiwei.github.io/post/2016/raspberry-pi-headless-setup/" title="Raspberry Pi 3 无显示器 安装指南">Raspberry Pi 3 无显示器 安装指南</a>
+    </li>
+    
+    <li>
+        <a href="https://xusiwei.github.io/post/2016/nginx-concurrency-model/" title="NGINX的并发模型">NGINX的并发模型</a>
+    </li>
+    
+    <li>
+        <a href="https://xusiwei.github.io/post/2016/docker-get-start/" title="docker 入门指南">docker 入门指南</a>
+    </li>
+    
+    <li>
+        <a href="https://xusiwei.github.io/post/2016/nginx-source-install/" title="NGINX 源码安装">NGINX 源码安装</a>
+    </li>
+    
+    <li>
+        <a href="https://xusiwei.github.io/post/2016/build-blog-with-hugo-and-github-pages/" title="用Hugo和GitHub Pages搭建博客">用Hugo和GitHub Pages搭建博客</a>
+    </li>
+    
+    <li>
+        <a href="https://xusiwei.github.io/post/hello-world/" title="你好，世界">你好，世界</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://xusiwei.github.io/categories/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">使用指南(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://xusiwei.github.io/categories/%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6/">开源硬件(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://xusiwei.github.io/categories/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/">开源软件(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://xusiwei.github.io/tags/Docker/">Docker</a>
+    
+    <a href="https://xusiwei.github.io/tags/GitHub/">GitHub</a>
+    
+    <a href="https://xusiwei.github.io/tags/Hugo/">Hugo</a>
+    
+    <a href="https://xusiwei.github.io/tags/Nginx/">Nginx</a>
+    
+    <a href="https://xusiwei.github.io/tags/RaspberryPi/">RaspberryPi</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://xusiwei.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://xusiwei.github.io/">Siwei Xu By Siwei Xu</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+
+</body>
+</html>

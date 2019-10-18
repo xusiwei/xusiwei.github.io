@@ -1,14 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
-        <loc>https://xusiwei.github.io/</loc>
+        <loc>https://xusiwei.github.io/categories/</loc>
         <lastmod>2016-03-26T18:40:13+08:00</lastmod>
-        <priority>0</priority>
+    </url>
+    
+    <url>
+        <loc>https://xusiwei.github.io/post/</loc>
+        <lastmod>2016-03-26T18:40:13+08:00</lastmod>
     </url>
     
     <url>
         <loc>https://xusiwei.github.io/post/2016/raspberry-pi-use-ustc-mirror/</loc>
+        <lastmod>2016-03-26T18:40:13+08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://xusiwei.github.io/tags/RaspberryPi/</loc>
+        <lastmod>2016-03-26T18:40:13+08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://xusiwei.github.io/</loc>
+        <lastmod>2016-03-26T18:40:13+08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://xusiwei.github.io/tags/</loc>
+        <lastmod>2016-03-26T18:40:13+08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://xusiwei.github.io/categories/%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6/</loc>
         <lastmod>2016-03-26T18:40:13+08:00</lastmod>
     </url>
     
@@ -18,8 +41,23 @@
     </url>
     
     <url>
+        <loc>https://xusiwei.github.io/tags/Nginx/</loc>
+        <lastmod>2016-03-09T23:38:56+08:00</lastmod>
+    </url>
+    
+    <url>
         <loc>https://xusiwei.github.io/post/2016/nginx-concurrency-model/</loc>
         <lastmod>2016-03-09T23:38:56+08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://xusiwei.github.io/categories/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/</loc>
+        <lastmod>2016-03-09T23:38:56+08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://xusiwei.github.io/tags/Docker/</loc>
+        <lastmod>2016-03-08T22:58:33+08:00</lastmod>
     </url>
     
     <url>
@@ -28,8 +66,23 @@
     </url>
     
     <url>
+        <loc>https://xusiwei.github.io/categories/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
+        <lastmod>2016-03-08T22:58:33+08:00</lastmod>
+    </url>
+    
+    <url>
         <loc>https://xusiwei.github.io/post/2016/nginx-source-install/</loc>
         <lastmod>2016-03-07T23:35:28+08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://xusiwei.github.io/tags/GitHub/</loc>
+        <lastmod>2016-02-21T16:36:54+08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://xusiwei.github.io/tags/Hugo/</loc>
+        <lastmod>2016-02-21T16:36:54+08:00</lastmod>
     </url>
     
     <url>
@@ -45,6 +98,11 @@
     <url>
         <loc>https://xusiwei.github.io/post/hello-world/</loc>
         <lastmod>2016-02-19T23:16:09+08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://xusiwei.github.io/archives/</loc>
+        <lastmod>0001-01-01T00:00:00+00:00</lastmod>
     </url>
     
 </urlset>

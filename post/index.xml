@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on xusiwei&#39;s blog</title>
+    <title>Posts on Siwei Xu</title>
     <link>https://xusiwei.github.io/post/</link>
-    <description>Recent content in Posts on xusiwei&#39;s blog</description>
+    <description>Recent content in Posts on Siwei Xu</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <language>zh-CN</language>
     <lastBuildDate>Sat, 26 Mar 2016 18:40:13 +0800</lastBuildDate>
-    <atom:link href="https://xusiwei.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://xusiwei.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Raspberry Pi 使用科大镜像源</title>
@@ -16,14 +17,12 @@
       <pubDate>Sat, 26 Mar 2016 18:40:13 +0800</pubDate>
       
       <guid>https://xusiwei.github.io/post/2016/raspberry-pi-use-ustc-mirror/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://mirrors.ustc.edu.cn/&#34;&gt;科大开源镜像站&lt;/a&gt;提供了raspbian的软件包镜像，国内的用户可以选择改用科大镜像站作为更新源。&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&#34;http://mirrors.ustc.edu.cn/&#34;&gt;科大开源镜像站&lt;/a&gt;提供了raspbian的软件包镜像，国内的用户可以选择改用科大镜像站作为更新源。&lt;/p&gt;
 
 &lt;p&gt;科大镜像站官方已经提供了一份&lt;a href=&#34;https://lug.ustc.edu.cn/wiki/mirrors/help/raspbian&#34;&gt;帮助文档&lt;/a&gt;，用于指导用户如何使用科大镜像更新raspbian。
 但这份文档是基于 wheezy 的，最新的jessie版可以参考本文。&lt;/p&gt;
 
-&lt;h2 id=&#34;具体做法:1193d113f0dfa5b1e980baf9f09a2f49&#34;&gt;具体做法&lt;/h2&gt;
+&lt;h2 id=&#34;具体做法&#34;&gt;具体做法&lt;/h2&gt;
 
 &lt;p&gt;修改之前，最好先备份原始的配置文件。例如，使用如下命令将两个源配置文件拷贝到HOME目录。&lt;/p&gt;
 
@@ -33,7 +32,7 @@ cp /etc/apt/sources.d/raspi.list ~
 
 &lt;p&gt;或者直接在原来配置文件的基础上修改，但将原有的配置全部注释掉（使用#注释）。&lt;/p&gt;
 
-&lt;h3 id=&#34;修改-source-list:1193d113f0dfa5b1e980baf9f09a2f49&#34;&gt;修改 source.list&lt;/h3&gt;
+&lt;h3 id=&#34;修改-source-list&#34;&gt;修改 source.list&lt;/h3&gt;
 
 &lt;p&gt;更新后的&lt;code&gt;/etc/apt/sources.list&lt;/code&gt;：&lt;/p&gt;
 
@@ -45,22 +44,7 @@ cp /etc/apt/sources.d/raspi.list ~
 deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ jessie main contrib non-free rpi
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;实际修改是，将&lt;code&gt;mirrordirector.raspbian.org&lt;/code&gt;替换为&lt;code&gt;mirrors.ustc.edu.cn/raspbian/&lt;/code&gt;。&lt;/p&gt;
-
-&lt;h3 id=&#34;修改-raspi-list:1193d113f0dfa5b1e980baf9f09a2f49&#34;&gt;修改 raspi.list&lt;/h3&gt;
-
-&lt;p&gt;更新后的&lt;code&gt;/etc/apt/raspi.list&lt;/code&gt;：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#deb http://archive.raspberrypi.org/debian/ jessie main ui
-# Uncomment line below then &#39;apt-get update&#39; to enable &#39;apt-get source&#39;
-#deb-src http://archive.raspberrypi.org/debian/ jessie main ui
-
-# use ustc mirror:
-deb http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ jessie main ui
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;实际修改是，将&lt;code&gt;archive.raspberrypi.org&lt;/code&gt;替换为&lt;code&gt;mirrors.ustc.edu.cn/archive.raspberrypi.org&lt;/code&gt;。&lt;/p&gt;
-</description>
+&lt;p&gt;实际修改是，将&lt;code&gt;mirrordirector.raspbian.org&lt;/code&gt;替换为&lt;code&gt;mirrors.ustc.edu.cn/raspbian/&lt;/code&gt;。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -69,15 +53,13 @@ deb http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ jessie main ui
       <pubDate>Sat, 26 Mar 2016 09:31:01 +0800</pubDate>
       
       <guid>https://xusiwei.github.io/post/2016/raspberry-pi-headless-setup/</guid>
-      <description>
-
-&lt;p&gt;本文记录了——在没有显示器、键盘的条件下，如何通过网线为树梅派（后面简称pi）安装系统。&lt;/p&gt;
+      <description>&lt;p&gt;本文记录了——在没有显示器、键盘的条件下，如何通过网线为树梅派（后面简称pi）安装系统。&lt;/p&gt;
 
 &lt;p&gt;实验环境如下图。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://xusiwei.github.io/post/2016/raspi-rj45-laptop.png&#34; alt=&#34;raspberrypi-rj45-laptop&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;下载系统镜像:1b28d5a7e7479bf802469f0b464e0ae5&#34;&gt;下载系统镜像&lt;/h2&gt;
+&lt;h2 id=&#34;下载系统镜像&#34;&gt;下载系统镜像&lt;/h2&gt;
 
 &lt;p&gt;官网的&lt;a href=&#34;https://www.raspberrypi.org/downloads&#34;&gt;下载页面&lt;/a&gt;可以找到pi的系统镜像。&lt;/p&gt;
 
@@ -89,139 +71,7 @@ deb http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ jessie main ui
 
 &lt;p&gt;我下载的是&lt;a href=&#34;http://director.downloads.raspberrypi.org/raspbian/images/raspbian-2016-03-18/2016-03-18-raspbian-jessie.zip&#34;&gt;RASPBIAN JESSIE&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;下载完成后解压zip文件，将会得到一个img文件。&lt;/p&gt;
-
-&lt;h2 id=&#34;将镜像写入sd卡:1b28d5a7e7479bf802469f0b464e0ae5&#34;&gt;将镜像写入SD卡&lt;/h2&gt;
-
-&lt;p&gt;Windows系统上可以用 &lt;a href=&#34;https://sourceforge.net/projects/win32diskimager/&#34;&gt;Win32 Disk Imager&lt;/a&gt; 进行写入。&lt;/p&gt;
-
-&lt;p&gt;Linux/Mac OS上可以用dd命令。&lt;/p&gt;
-
-&lt;p&gt;插入sd卡之前可以看看系统当前有哪些存储设备：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ls /dev/sd*
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;插入sd卡之后，再看一次，前后比较，就可以知道sd卡对于的设备路径了。&lt;/p&gt;
-
-&lt;p&gt;比如你的sd卡设备是&lt;code&gt;/dev/sdx&lt;/code&gt;，可以用如下命令，将镜像写入sd卡。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;dd bs=4M if=2016-03-18-raspbian-jessie.img of=/dev/sdx
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;写入镜像的过程比较慢，而且dd命令没有输出，可以在另一个终端里用命令&lt;code&gt;sudo pkill -USR1 -n -x dd&lt;/code&gt;向dd发信号，让dd报告当前进度。&lt;/p&gt;
-
-&lt;h2 id=&#34;启动pi:1b28d5a7e7479bf802469f0b464e0ae5&#34;&gt;启动pi&lt;/h2&gt;
-
-&lt;p&gt;pi镜像文件写入sd卡完成后，就可以用sd卡启动pi了。&lt;/p&gt;
-
-&lt;p&gt;但为了能够通过网线连接pi，还需要再做一点配置。&lt;/p&gt;
-
-&lt;h3 id=&#34;修改pi的启动参数:1b28d5a7e7479bf802469f0b464e0ae5&#34;&gt;修改pi的启动参数&lt;/h3&gt;
-
-&lt;p&gt;下面介绍如何为网线的两端配置IP。&lt;/p&gt;
-
-&lt;p&gt;在将sd卡装到pi上之前，可以通过修改启动参数，为pi预分配一个IP地址。&lt;/p&gt;
-
-&lt;p&gt;具体做法是，查看刚写好的sd卡，找到 cmdline.txt，在最末尾加上：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ip=192.168.1.2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;（PS: 需要注意的是，不能换行，&lt;code&gt;ip&lt;/code&gt;是小写。）
-这样，pi上电、启动后，会为它的网口分配&lt;code&gt;192.168.1.2&lt;/code&gt;。&lt;/p&gt;
-
-&lt;h3 id=&#34;连接pi和pc:1b28d5a7e7479bf802469f0b464e0ae5&#34;&gt;连接pi和PC&lt;/h3&gt;
-
-&lt;p&gt;修改完pi的启动参数，就可以：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;将读卡器从PC上取下, 将sd卡装到pi上&lt;/li&gt;
-&lt;li&gt;用网线将pi的网口和PC的网口连接起来&lt;/li&gt;
-&lt;li&gt;插上pi的电源&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;修改pc的网口ip:1b28d5a7e7479bf802469f0b464e0ae5&#34;&gt;修改PC的网口IP&lt;/h3&gt;
-
-&lt;p&gt;接下来要做的是修改PC端的网口IP。Windows系统可以在“TCP/IP选项”设置，&lt;a href=&#34;http://www.howtogeek.com/howto/19249/how-to-assign-a-static-ip-address-in-xp-vista-or-windows-7/&#34;&gt;参考此链接&lt;/a&gt;。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;xu@debian:~$ ifconfig eth0 | grep inet
-xu@debian:~$ sudo ifconfig eth0 192.168.1.4
-xu@debian:~$ ifconfig eth0 | grep inet
-          inet addr:192.168.1.4  Bcast:192.168.1.255  Mask:255.255.255.0
-          inet6 addr: fe80::226a:8aff:fe32:f22c/64 Scope:Link
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;修改成功后，可以通过ping命令测试一下，是否两端的IP都已经按照预期配置了。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;xu@debian:~$ ping 192.168.1.2
-PING 192.168.1.2 (192.168.1.2) 56(84) bytes of data.
-64 bytes from 192.168.1.2: icmp_seq=1 ttl=64 time=0.585 ms
-64 bytes from 192.168.1.2: icmp_seq=2 ttl=64 time=0.474 ms
-64 bytes from 192.168.1.2: icmp_seq=3 ttl=64 time=0.468 ms
-^C
---- 192.168.1.2 ping statistics ---
-3 packets transmitted, 3 received, 0% packet loss, time 1999ms
-rtt min/avg/max/mdev = 0.468/0.509/0.585/0.053 ms
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;使用-ssh-客户端连接到-pi:1b28d5a7e7479bf802469f0b464e0ae5&#34;&gt;使用 ssh 客户端连接到 pi&lt;/h2&gt;
-
-&lt;p&gt;接下来就可以用ssh客户端链接pi了。Windows系统可以使用&lt;a href=&#34;http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html&#34;&gt;PuTTY&lt;/a&gt;。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;xu@debian:~$ ssh pi@192.168.1.2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;pi的默认用户名、密码分别是&lt;code&gt;pi&lt;/code&gt;、&lt;code&gt;raspberry&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;密码输入正确后，可以看到：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;
-The programs included with the Debian GNU/Linux system are free software;
-the exact distribution terms for each program are described in the
-individual files in /usr/share/doc/*/copyright.
-
-Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-permitted by applicable law.
-Last login: Fri Mar 18 08:58:31 2016
-pi@raspberrypi:~ $
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;展开文件系统:1b28d5a7e7479bf802469f0b464e0ae5&#34;&gt;展开文件系统&lt;/h3&gt;
-
-&lt;p&gt;成功登录pi后，运行 raspi-config， 通过上下键选择，回车确认，TAB跳转。&lt;/p&gt;
-
-&lt;p&gt;选择第一项，“Expand Filesystem”。&lt;/p&gt;
-
-&lt;p&gt;至此，系统安装完成。&lt;/p&gt;
-
-&lt;h2 id=&#34;问题排除:1b28d5a7e7479bf802469f0b464e0ae5&#34;&gt;问题排除&lt;/h2&gt;
-
-&lt;p&gt;整个过程中最重要一步是，为网线的两端分配IP。你可通过：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ifconfig 查看PC的网口是否正常分配了IP&lt;/li&gt;
-&lt;li&gt;ping 命令测试pi的网口是否正常分配了IP&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;整个过程中修改的文件仅有一个 cmdline.txt，如果pi端没有正常分配IP。从pi上取下sd卡，连到PC上，查看cmdline.txt是否按照正确的方式修改了。&lt;/p&gt;
-
-&lt;p&gt;如果pi还没能正常的IP，重复前面的步骤。&lt;/p&gt;
-
-&lt;p&gt;注意，PC上网线连接中断会清除IP。而pi的IP是通过启动参数配置的，所以不会轻易消失; 如果你需要让pi连接路由器，并自动获取IP，需要将启动参数上的ip删除。&lt;/p&gt;
-
-&lt;h2 id=&#34;引用链接:1b28d5a7e7479bf802469f0b464e0ae5&#34;&gt;引用链接&lt;/h2&gt;
-
-&lt;p&gt;我PC的系统是Linux，本文记录的步骤仅对Linux系统用户有参考意义。&lt;/p&gt;
-
-&lt;p&gt;Windows用户参考：&lt;a href=&#34;http://www.circuitbasics.com/raspberry-pi-basics-setup-without-monitor-keyboard-headless-mode/&#34;&gt;此链接&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;Mac用户参考：&lt;a href=&#34;https://www.raspberrypi.org/documentation/installation/installing-images/mac.md&#34;&gt;此链接&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.raspberrypi.org/documentation/installation/installing-images/linux.md&#34;&gt;https://www.raspberrypi.org/documentation/installation/installing-images/linux.md&lt;/a&gt;
-&lt;a href=&#34;https://www.raspberrypi.org/blog/use-your-desktop-or-laptop-screen-and-keyboard-with-your-pi/&#34;&gt;https://www.raspberrypi.org/blog/use-your-desktop-or-laptop-screen-and-keyboard-with-your-pi/&lt;/a&gt;
-&lt;a href=&#34;https://pihw.wordpress.com/guides/direct-network-connection/&#34;&gt;https://pihw.wordpress.com/guides/direct-network-connection/&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;下载完成后解压zip文件，将会得到一个img文件。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -230,9 +80,7 @@ pi@raspberrypi:~ $
       <pubDate>Wed, 09 Mar 2016 23:38:56 +0800</pubDate>
       
       <guid>https://xusiwei.github.io/post/2016/nginx-concurrency-model/</guid>
-      <description>
-
-&lt;h2 id=&#34;apache-的并发模型:4a22d405802f88aaa6b5403c942c9b42&#34;&gt;Apache 的并发模型&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;apache-的并发模型&#34;&gt;Apache 的并发模型&lt;/h2&gt;
 
 &lt;p&gt;Apache 的早期版本的并发模型是 one process per connection，也是早期Unix服务端的主流模型：
 主进程accept阻塞在listen fd上，有新的HTTP请求到来时（accept返回connection fd），主进程fork一个服务进程，
@@ -249,11 +97,11 @@ pi@raspberrypi:~ $
 
 &lt;p&gt;这种模型下，单个服务器的服务能力主要受到内存的限制，因为每创建一个进程/线程都要消耗一定数量的内存（MB级别）。&lt;/p&gt;
 
-&lt;h2 id=&#34;nginx-的并发模型:4a22d405802f88aaa6b5403c942c9b42&#34;&gt;NGINX 的并发模型&lt;/h2&gt;
+&lt;h2 id=&#34;nginx-的并发模型&#34;&gt;NGINX 的并发模型&lt;/h2&gt;
 
 &lt;p&gt;NIGNX 支持 single 模式 和 master + worker 模式。&lt;/p&gt;
 
-&lt;h3 id=&#34;nginx-master-worker-模式:4a22d405802f88aaa6b5403c942c9b42&#34;&gt;NGINX master + worker 模式&lt;/h3&gt;
+&lt;h3 id=&#34;nginx-master-worker-模式&#34;&gt;NGINX master + worker 模式&lt;/h3&gt;
 
 &lt;p&gt;NGINX通常工作在master + worker模式下，master和worker都是单线程的进程，用户可以通过增加worker进程数实现提高多核CPU的利用率。
 同时，这种每个进程仅有一个线程的模型，使得不需要时刻考虑数据的保护问题（如果是多线程则需要考虑）。&lt;/p&gt;
@@ -261,18 +109,18 @@ pi@raspberrypi:~ $
 &lt;p&gt;来自Andrew Alexeev的一张图：
 &lt;img src=&#34;http://www.aosabook.org/images/nginx/architecture.png&#34; alt=&#34;NGINX architecture&#34; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;master-进程:4a22d405802f88aaa6b5403c942c9b42&#34;&gt;master 进程&lt;/h4&gt;
+&lt;h4 id=&#34;master-进程&#34;&gt;master 进程&lt;/h4&gt;
 
 &lt;p&gt;NGINX的master进程，负责解析配置文件，并启动其他角色的进程，如启动worker，cache manager。&lt;/p&gt;
 
 &lt;p&gt;启动完成其他进程之后，master进程仅起监视作用（相当与monitor角色），后面用户可以通过singaller角色的nginx向master发命令，
 master再通知它创建起来的其他进程。&lt;/p&gt;
 
-&lt;h4 id=&#34;worker-进程:4a22d405802f88aaa6b5403c942c9b42&#34;&gt;worker 进程&lt;/h4&gt;
+&lt;h4 id=&#34;worker-进程&#34;&gt;worker 进程&lt;/h4&gt;
 
 &lt;p&gt;worker进程是实际服务客户的进程。包括接受新连接（accept），相应连接上的消息（read/write）.&lt;/p&gt;
 
-&lt;h4 id=&#34;singaller-进程:4a22d405802f88aaa6b5403c942c9b42&#34;&gt;singaller 进程&lt;/h4&gt;
+&lt;h4 id=&#34;singaller-进程&#34;&gt;singaller 进程&lt;/h4&gt;
 
 &lt;p&gt;singaller进程仅仅是一个向master进程发送信号的工具进程。
 通过向master发生特定消息，能够让：
@@ -280,14 +128,9 @@ master再通知它创建起来的其他进程。&lt;/p&gt;
 * master进程重新加载配置文件，或者重启worker。
 * 重新打开log 文件。&lt;/p&gt;
 
-&lt;h4 id=&#34;cache-manager:4a22d405802f88aaa6b5403c942c9b42&#34;&gt;cache manager&lt;/h4&gt;
+&lt;h4 id=&#34;cache-manager&#34;&gt;cache manager&lt;/h4&gt;
 
-&lt;p&gt;可以做 HTTP、文件缓存，即对同一个静态文件的请求进行缓存。&lt;/p&gt;
-
-&lt;h2 id=&#34;more:4a22d405802f88aaa6b5403c942c9b42&#34;&gt;more&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.aosabook.org/en/nginx.html&#34;&gt;Chapter “nginx” in “The Architecture of Open Source Applications”&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;可以做 HTTP、文件缓存，即对同一个静态文件的请求进行缓存。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -296,14 +139,12 @@ master再通知它创建起来的其他进程。&lt;/p&gt;
       <pubDate>Tue, 08 Mar 2016 22:58:33 +0800</pubDate>
       
       <guid>https://xusiwei.github.io/post/2016/docker-get-start/</guid>
-      <description>
-
-&lt;p&gt;本文是实践官方“Get Started”的一个记录，由于我的桌面系统是Debian 8，本文的操作仅确保在 Debian 8 上正确。
+      <description>&lt;p&gt;本文是实践官方“Get Started”的一个记录，由于我的桌面系统是Debian 8，本文的操作仅确保在 Debian 8 上正确。
 指南链接（Linux版）： &lt;a href=&#34;https://docs.docker.com/linux/&#34;&gt;https://docs.docker.com/linux/&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;安装-docker:c57648232b8ca5cef6cec3c0bc434e73&#34;&gt;安装 Docker&lt;/h2&gt;
+&lt;h2 id=&#34;安装-docker&#34;&gt;安装 Docker&lt;/h2&gt;
 
-&lt;h3 id=&#34;官方脚本安装:c57648232b8ca5cef6cec3c0bc434e73&#34;&gt;官方脚本安装&lt;/h3&gt;
+&lt;h3 id=&#34;官方脚本安装&#34;&gt;官方脚本安装&lt;/h3&gt;
 
 &lt;p&gt;如果没有 curl ，先安装 curl&lt;/p&gt;
 
@@ -323,9 +164,9 @@ sudo apt-get install curl
 
 &lt;p&gt;将当前用户（xu）加到docker组，此后运行docker可以不加sudo。另外，让当前用户的组别改变需要重新登录（先log out再log in）。&lt;/p&gt;
 
-&lt;h3 id=&#34;验证:c57648232b8ca5cef6cec3c0bc434e73&#34;&gt;验证&lt;/h3&gt;
+&lt;h3 id=&#34;验证&#34;&gt;验证&lt;/h3&gt;
 
-&lt;h3 id=&#34;bash:c57648232b8ca5cef6cec3c0bc434e73&#34;&gt;bash&lt;/h3&gt;
+&lt;h3 id=&#34;bash&#34;&gt;bash&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;docker run -i -t debian docker
 &lt;/code&gt;&lt;/pre&gt;
@@ -341,96 +182,7 @@ root         1     0  2 15:32 ?        00:00:00 bash
 root         8     1  0 15:32 ?        00:00:00 ps -ef
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;可以看到，仅有两个进程，而且pid都非常小。这说明，这个会话环境已经与外界隔离了。&lt;/p&gt;
-
-&lt;h4 id=&#34;hello-world:c57648232b8ca5cef6cec3c0bc434e73&#34;&gt;hello world&lt;/h4&gt;
-
-&lt;p&gt;安装成功后，验证：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;user@host$ docker run hello-world
-Unable to find image &#39;hello-world:latest&#39; locally
-latest: Pulling from library/hello-world
-535020c3e8ad: Pull complete
-af340544ed62: Pull complete
-Digest: sha256:a68868bfe696c00866942e8f5ca39e3e31b79c1e50feaee4ce5e28df2f051d5c
-Status: Downloaded newer image for hello-world:latest
-
-Hello from Docker.
-This message shows that your installation appears to be working correctly.
-
-To generate this message, Docker took the following steps:
- 1. The Docker Engine CLI client contacted the Docker Engine daemon.
- 2. The Docker Engine daemon pulled the &amp;quot;hello-world&amp;quot; image from the Docker Hub.
- 3. The Docker Engine daemon created a new container from that image which runs the
-    executable that produces the output you are currently reading.
- 4. The Docker Engine daemon streamed that output to the Docker Engine CLI client, which sent it
-    to your terminal.
-
-To try something more ambitious, you can run an Ubuntu container with:
- $ docker run -it ubuntu bash
-
-Share images, automate workflows, and more with a free Docker Hub account:
- https://hub.docker.com
-
-For more examples and ideas, visit:
- https://docs.docker.com/userguide/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;其中，&lt;code&gt;Hello from Docker.&lt;/code&gt;及以后的内容是docker运行的结果，前面是镜像下载的log。&lt;/p&gt;
-
-&lt;h3 id=&#34;软件源安装:c57648232b8ca5cef6cec3c0bc434e73&#34;&gt;软件源安装&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get install docker-engine
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;通常版本较低（不推荐）。&lt;/p&gt;
-
-&lt;h2 id=&#34;关于image和container:c57648232b8ca5cef6cec3c0bc434e73&#34;&gt;关于image和container&lt;/h2&gt;
-
-&lt;p&gt;刚才的一个&lt;code&gt;docker run hello-world&lt;/code&gt;命令，包含了docker引擎的主要工作，命令的三部分：
-&lt;img src=&#34;https://xusiwei.github.io/post/2016/docker-cmd-struct.png&#34; alt=&#34;docker command structure&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;container&lt;/code&gt;（容器）是一个最精简的Linux操作系统。&lt;code&gt;image&lt;/code&gt;（镜像）是可以装载到&lt;code&gt;container&lt;/code&gt;的软件。
-敲下hello-world命令后，docker引擎：
-* 检查本地是否已经有&lt;code&gt;hello-world&lt;/code&gt;镜像
-* 如果没有，从Docker Hub下载该镜像
-* 将镜像装入容器并运行它&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;hello-world&lt;/code&gt;进行输出一些信息后就退出了。一般情况下，镜像的具体行为和它的构建过程有关。&lt;/p&gt;
-
-&lt;p&gt;Docker镜像的功能远不至于此，它可以是像数据库那样的复杂软件，运行后等待你（或其他人）向其中添加数据。&lt;/p&gt;
-
-&lt;p&gt;Docker引擎让创建并分享软件变得简单——Docker容器总能保证镜像能够运行。&lt;/p&gt;
-
-&lt;h2 id=&#34;寻找-运行别人创建的镜像-docker-hub:c57648232b8ca5cef6cec3c0bc434e73&#34;&gt;寻找、运行别人创建的镜像 —— Docker Hub&lt;/h2&gt;
-
-&lt;p&gt;Docker Hub和GitHub类似，只是Docker Hub上托管的是Docker镜像而不是源码，这里你同样可给关注的镜像star。&lt;/p&gt;
-
-&lt;p&gt;在Docker Hub上能找到来自世界各地的人创建的docker镜像，docker hub的explore和GitHub的explore也非常类似，可在浏览其他人都创建了那些镜像，也能够看到各个镜像有多少star。&lt;/p&gt;
-
-&lt;p&gt;官方的&lt;code&gt;Get Started&lt;/code&gt;里面以whalesay为例演示了如何用Docker Hub：
-1. 在Docker Hub上搜索whalesay镜像
-2. 运行whalesay镜像&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ docker run docker/whalesay cowsay boo
-_____
-&amp;lt; boo &amp;gt;
------
-   \
-    \
-     \
-                   ##        .
-             ## ## ##       ==
-          ## ## ## ##      ===
-      /&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;___/ ===
- ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ /  ===- ~~~
-      \______ o          __/
-       \    \        __/
-         \____\______/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;whalesay是一个基于ubuntu 14.04构建的、命令行下输出字符图像的镜像，just for fun。&lt;/p&gt;
-</description>
+&lt;p&gt;可以看到，仅有两个进程，而且pid都非常小。这说明，这个会话环境已经与外界隔离了。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -439,21 +191,19 @@ _____
       <pubDate>Mon, 07 Mar 2016 23:35:28 +0800</pubDate>
       
       <guid>https://xusiwei.github.io/post/2016/nginx-source-install/</guid>
-      <description>
-
-&lt;p&gt;NIGNX 是由 Igor Sysoev 开发的一个 Web 服务器。
+      <description>&lt;p&gt;NIGNX 是由 Igor Sysoev 开发的一个 Web 服务器。
 官网：&lt;a href=&#34;http://nginx.org/&#34;&gt;http://nginx.org/&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;下载页面： &lt;a href=&#34;http://nginx.org/en/download.html&#34;&gt;http://nginx.org/en/download.html&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;下载-nginx:52a4c6da7db903582370865375f9a938&#34;&gt;下载 NGINX&lt;/h2&gt;
+&lt;h2 id=&#34;下载-nginx&#34;&gt;下载 NGINX&lt;/h2&gt;
 
 &lt;p&gt;以 1.8.1 版本为例：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;wget http://nginx.org/download/nginx-1.8.1.tar.gz
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;下载依赖库:52a4c6da7db903582370865375f9a938&#34;&gt;下载依赖库&lt;/h2&gt;
+&lt;h2 id=&#34;下载依赖库&#34;&gt;下载依赖库&lt;/h2&gt;
 
 &lt;p&gt;NGINX必须依赖zlib和pcre, (若想让nginx支持HTTPS协议，还需OpenSSL)&lt;/p&gt;
 
@@ -473,7 +223,7 @@ _____
 &lt;pre&gt;&lt;code&gt;wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.38.tar.gz
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;解压:52a4c6da7db903582370865375f9a938&#34;&gt;解压&lt;/h2&gt;
+&lt;h2 id=&#34;解压&#34;&gt;解压&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;tar xzvf nginx-1.8.1.tar.gz
 
@@ -482,124 +232,17 @@ tar xzvf zlib-1.2.8.tar.gz
 tar xzvf pcre-8.38.tar.gz
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;编译:52a4c6da7db903582370865375f9a938&#34;&gt;编译&lt;/h2&gt;
+&lt;h2 id=&#34;编译&#34;&gt;编译&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;cd nginx-1.8.1/
 
 ./configure --with-pcre=../pcre-8.38 --with-zlib=../zlib-1.2.8
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;安装:52a4c6da7db903582370865375f9a938&#34;&gt;安装&lt;/h2&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo make install
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;默认将会安装到 &lt;code&gt;/usr/local/nginx&lt;/code&gt; 目录&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;xusiwei@github:/usr/local/nginx$ tree
-.
-├── conf
-│   ├── fastcgi.conf
-│   ├── fastcgi.conf.default
-│   ├── fastcgi_params
-│   ├── fastcgi_params.default
-│   ├── koi-utf
-│   ├── koi-win
-│   ├── mime.types
-│   ├── mime.types.default
-│   ├── nginx.conf
-│   ├── nginx.conf.default
-│   ├── scgi_params
-│   ├── scgi_params.default
-│   ├── uwsgi_params
-│   ├── uwsgi_params.default
-│   └── win-utf
-├── html
-│   ├── 50x.html
-│   └── index.html
-├── logs
-└── sbin
-    └── nginx
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;启动:52a4c6da7db903582370865375f9a938&#34;&gt;启动&lt;/h2&gt;
-
-&lt;p&gt;源码编译安装生成的可执行文件位于 &lt;code&gt;/usr/local/nginx/sbin/&lt;/code&gt;目录下，所以还需要将该目录加到&lt;code&gt;$PATH&lt;/code&gt;下，
-或者在&lt;code&gt;$PATH&lt;/code&gt;的某个目录中创建一个符号链接指向 &lt;code&gt;/usr/local/nginx/sbin/nginx&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;xusiwei@github:~$ cd /usr/local/bin/
-xusiwei@github:/usr/local/bin$ sudo ln -s /usr/local/nginx/sbin/nginx nginx
-xusiwei@github:/usr/local/bin$ nginx -v
-nginx version: nginx/1.8.1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后，就可以启动了：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;xusiwei@github:~$ sudo nginx
-xusiwei@github:~$
-xusiwei@github:~$ ps -ef | grep nginx
-xu       26065 24955  2 3月07 pts/2   00:00:53 kwrite content/post/2016/nginx-source-warmup.md
-root     30077     1  0 00:08 ?        00:00:00 nginx: master process nginx
-nobody   30078 30077  0 00:08 ?        00:00:00 nginx: worker process
-xu       30080 17554  0 00:08 pts/1    00:00:00 grep nginx
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;不加参数启动，将会使用默认配置文件： &lt;code&gt;/usr/local/nginx/conf/nginx.conf&lt;/code&gt;，并以 &lt;code&gt;/usr/local/nginx/&lt;/code&gt; 为工作目录&lt;/p&gt;
-
-&lt;h2 id=&#34;测试:52a4c6da7db903582370865375f9a938&#34;&gt;测试&lt;/h2&gt;
-
-&lt;p&gt;此时可以使用浏览器 &lt;a href=&#34;http://localhost&#34;&gt;http://localhost&lt;/a&gt; 或 &lt;a href=&#34;http://127.0.0.1&#34;&gt;http://127.0.0.1&lt;/a&gt; 看到效果了&lt;/p&gt;
-
-&lt;p&gt;如果是server版系统，可以用curl测试：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;xusiwei@github:~$ curl http://localhost
-&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html&amp;gt;
-&amp;lt;head&amp;gt;
-&amp;lt;title&amp;gt;Welcome to nginx!&amp;lt;/title&amp;gt;
-&amp;lt;style&amp;gt;
-    body {
-        width: 35em;
-        margin: 0 auto;
-        font-family: Tahoma, Verdana, Arial, sans-serif;
-    }
-&amp;lt;/style&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-&amp;lt;h1&amp;gt;Welcome to nginx!&amp;lt;/h1&amp;gt;
-&amp;lt;p&amp;gt;If you see this page, the nginx web server is successfully installed and
-working. Further configuration is required.&amp;lt;/p&amp;gt;
-
-&amp;lt;p&amp;gt;For online documentation and support please refer to
-&amp;lt;a href=&amp;quot;http://nginx.org/&amp;quot;&amp;gt;nginx.org&amp;lt;/a&amp;gt;.&amp;lt;br/&amp;gt;
-Commercial support is available at
-&amp;lt;a href=&amp;quot;http://nginx.com/&amp;quot;&amp;gt;nginx.com&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
-
-&amp;lt;p&amp;gt;&amp;lt;em&amp;gt;Thank you for using nginx.&amp;lt;/em&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;停止:52a4c6da7db903582370865375f9a938&#34;&gt;停止&lt;/h2&gt;
-
-&lt;p&gt;粗暴的方式，可以直接kill掉 nginx：
-    * 先用 &lt;code&gt;ps -ef | grep nginx&lt;/code&gt; 找到nginx的pid，再用 &lt;code&gt;kill pid&lt;/code&gt;杀掉nginx
-    * killall nginx
-nginx -s参数提供了优雅的停止nginx的操作：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo nginx -s stop
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;初次之外， -s 还有 quit, reopen, reload&lt;/p&gt;
-
-&lt;h2 id=&#34;关于软件源安装:52a4c6da7db903582370865375f9a938&#34;&gt;关于软件源安装&lt;/h2&gt;
-
-&lt;p&gt;多数发行版的 软件源 中都已经收录了nginx，但通常版本都比较;
-另外，如果你的发行版所属的发行商已经不再维护那个版本了，比如ubuntu 10.04，
-所以，不推荐从默认软件源安装。&lt;/p&gt;
-
-&lt;p&gt;但如果觉得自己编译麻烦，可以从nginx.org的“源”安装预先编译好的软件包，具体步骤参见：&lt;a href=&#34;http://nginx.org/en/linux_packages.html&#34;&gt;http://nginx.org/en/linux_packages.html&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -608,114 +251,23 @@ nginx -s参数提供了优雅的停止nginx的操作：&lt;/p&gt;
       <pubDate>Sun, 21 Feb 2016 16:36:54 +0800</pubDate>
       
       <guid>https://xusiwei.github.io/post/2016/build-blog-with-hugo-and-github-pages/</guid>
-      <description>
-
-&lt;p&gt;从前天晚上开始尝试了一下用Hugo和GitHub Pages搭建静态博客，总体还算顺利（主要是Hugo用起来比较方便）。&lt;/p&gt;
+      <description>&lt;p&gt;从前天晚上开始尝试了一下用Hugo和GitHub Pages搭建静态博客，总体还算顺利（主要是Hugo用起来比较方便）。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;关于 Hugo&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Hugo 是由 spf13 创建的一个静态网站生成器，首页：&lt;a href=&#34;https://www.gohugo.io/&#34;&gt;https://www.gohugo.io/&lt;/a&gt;&lt;/p&gt;
 
-&lt;h1 id=&#34;hugo-工作流:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;Hugo 工作流&lt;/h1&gt;
+&lt;h1 id=&#34;hugo-工作流&#34;&gt;Hugo 工作流&lt;/h1&gt;
 
 &lt;p&gt;下面将介绍Hugo的完整工作流程：&lt;/p&gt;
 
-&lt;h2 id=&#34;快速安装:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;快速安装&lt;/h2&gt;
+&lt;h2 id=&#34;快速安装&#34;&gt;快速安装&lt;/h2&gt;
 
 &lt;p&gt;在 &lt;a href=&#34;https://www.gohugo.io/&#34;&gt;https://www.gohugo.io/&lt;/a&gt; 能够找到 Homebrew 安装 Hugo的命令，&lt;/p&gt;
 
 &lt;p&gt;以及Download： &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;https://github.com/spf13/hugo/releases&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;下载对应的操作系统版本的Hugo二进制文件（hugo或者hugo.exe），添加到&lt;code&gt;$PATH&lt;/code&gt;能找到的目录下。&lt;/p&gt;
-
-&lt;h2 id=&#34;创建站点:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;创建站点&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ hugo new mysite
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;会在mysite目录生成原始（未经渲染的）站点，如下：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ cd mysite
-$ tree mysite
-.
-├── archetypes
-├── config.toml
-├── content
-├── data
-├── layouts
-└── static
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;创建文章:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;创建文章&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ hugo new about.md
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;会在content下创建一个about.md。&lt;/p&gt;
-
-&lt;h2 id=&#34;安装主题:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;安装主题&lt;/h2&gt;
-
-&lt;p&gt;在 &lt;a href=&#34;http://themes.gohugo.io/&#34;&gt;http://themes.gohugo.io/&lt;/a&gt; 选号主题之后，将对应主题下载到 &lt;code&gt;themes/&lt;/code&gt; 下，如hyde。&lt;/p&gt;
-
-&lt;h3 id=&#34;配置主题:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;配置主题&lt;/h3&gt;
-
-&lt;p&gt;不同主题会有不同可配置的参数，按照说明修改config.toml即可。&lt;/p&gt;
-
-&lt;h2 id=&#34;生成页面:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;生成页面&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;$ hugo --theme=hyde
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;该命令会将所有md渲染成HTML。&lt;/p&gt;
-
-&lt;h3 id=&#34;本地预览:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;本地预览&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;$ hugo server --theme=hyde --buildDrafts --watch
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;可在本地预览渲染效果。&lt;/p&gt;
-
-&lt;h2 id=&#34;发布:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;发布&lt;/h2&gt;
-
-&lt;p&gt;hugo命令默认生成html到 &lt;code&gt;public/&lt;/code&gt; 下，可用 &lt;code&gt;-d&lt;/code&gt; 选项渲染结果指向其他目录，
-或者在执行hugo命令前将 创建软连接 public 指向其他目录。&lt;/p&gt;
-
-&lt;p&gt;GitHug Pages提供了静态网页和Jeklly生成器功能，可以在 &lt;code&gt;USERNAME.githug.io&lt;/code&gt; 仓库
-或其他仓库的&lt;code&gt;gh-pages&lt;/code&gt;分支部署静态网页，或Jeklly原始页面。&lt;/p&gt;
-
-&lt;h1 id=&#34;hugo-jeklly-hexo-简单对比:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;Hugo, Jeklly, Hexo 简单对比&lt;/h1&gt;
-
-&lt;p&gt;在使用 Hugo 之前，我先后尝试了 Hexo、Jeklly， 说说感受。
-Hexo的npm安装需要依赖很多其他node库，在网络条件不好的情况下，光安装就很费劲。
-Jeklly也是，虽然相对Hexo来说依赖要少一些，但安装其他还是略显麻烦。&lt;/p&gt;
-
-&lt;p&gt;在经历过Hexo, Jeklly的痛苦之后，在安装Hugo的时候我直接选择了二进制安装。
-这可能和实现技术有关。Hugo, Jeklly, Hexo分别是基于Go, Ruby, Node.js。
-Go的编译型语言特性让Hugo&lt;strong&gt;更容易&lt;/strong&gt;“二进制安装”。&lt;/p&gt;
-
-&lt;p&gt;所以相对来说，Hugo的主要优势在于安装方便，据说生成速度也更快。&lt;/p&gt;
-
-&lt;h1 id=&#34;github-pages-相对其他博客的好处:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;GitHub Pages 相对其他博客的好处&lt;/h1&gt;
-
-&lt;p&gt;对于程序员来说，GitHub Pages相对于：
-1. 注册类的博客网站，如CSDN
-2. 自建独立博客，如WrodPress&lt;/p&gt;
-
-&lt;p&gt;GitHub Pages方式的好处在于————可以象管理代码一样管理博客，用git管理博客变更。&lt;/p&gt;
-
-&lt;p&gt;正如 &lt;a href=&#34;https://github.com/ruanyf&#34;&gt;@ruanyf&lt;/a&gt; 所说，“他们既拥有绝对管理权，
-又享受github带来的便利&amp;mdash;-不管何时何地，只要向主机提交commit，就能发布新文章。
-更妙的是，这一切还是免费的，github提供无限流量，世界各地都有理想的访问速度。”&lt;/p&gt;
-
-&lt;h1 id=&#34;参考链接:12928e9650273f3ab009a12bccc3ed6e&#34;&gt;参考链接&lt;/h1&gt;
-
-&lt;ol&gt;
-&lt;li&gt;hugo中文文档 &lt;a href=&#34;http://gohugo.org/&#34;&gt;gohugo.org&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.coderzh.com/2015/08/29/hugo/&#34;&gt;http://blog.coderzh.com/2015/08/29/hugo/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html&#34;&gt;http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
+&lt;p&gt;下载对应的操作系统版本的Hugo二进制文件（hugo或者hugo.exe），添加到&lt;code&gt;$PATH&lt;/code&gt;能找到的目录下。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -724,136 +276,11 @@ Go的编译型语言特性让Hugo&lt;strong&gt;更容易&lt;/strong&gt;“二进
       <pubDate>Fri, 19 Feb 2016 23:16:09 +0800</pubDate>
       
       <guid>https://xusiwei.github.io/post/hello-world/</guid>
-      <description>
+      <description>&lt;p&gt;这是一篇测试博客，在这你将看到Hugo对Markdown的渲染效果。&lt;/p&gt;
 
-&lt;p&gt;这是一篇测试博客，在这你将看到Hugo对Markdown的渲染效果。&lt;/p&gt;
+&lt;h1 id=&#34;关于-hugo&#34;&gt;关于 Hugo&lt;/h1&gt;
 
-&lt;h1 id=&#34;关于-hugo:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;关于 Hugo&lt;/h1&gt;
-
-&lt;p&gt;Hugo是一个静态网站生成器&lt;/p&gt;
-
-&lt;h1 id=&#34;headers:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;Headers&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;# This is an `&amp;lt;h1&amp;gt;` tag
-## This is an `&amp;lt;h2&amp;gt;` tag
-###### This is an `&amp;lt;h6&amp;gt;` tag
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;this-is-an-h1-tag:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;This is an &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; tag&lt;/h1&gt;
-
-&lt;h2 id=&#34;this-is-an-h2-tag:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;This is an &lt;code&gt;&amp;lt;h2&amp;gt;&lt;/code&gt; tag&lt;/h2&gt;
-
-&lt;h6 id=&#34;this-is-an-h6-tag:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;This is an &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; tag&lt;/h6&gt;
-
-&lt;h1 id=&#34;emphasis:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;Emphasis&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;*This text will be italic*
-_This will also be italic_
-
-**This text will be bold**
-__This will also be bold__
-
-_You **can** combine them_
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;This text will be italic&lt;/em&gt;
-&lt;em&gt;This will also be italic&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;This text will be bold&lt;/strong&gt;
-&lt;strong&gt;This will also be bold&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;You &lt;strong&gt;can&lt;/strong&gt; combine them&lt;/em&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;lists:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;Lists&lt;/h1&gt;
-
-&lt;h2 id=&#34;unordered:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;Unordered&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;* Item 1
-* Item 2
-  * Item 2a
-  * Item 2b
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Item 1&lt;/li&gt;
-&lt;li&gt;Item 2
-
-&lt;ul&gt;
-&lt;li&gt;Item 2a&lt;/li&gt;
-&lt;li&gt;Item 2b&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;ordered:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;Ordered&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;1. Item 1
-2. Item 2
-3. Item 3
-   * Item 3a
-   * Item 3b
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Item 1&lt;/li&gt;
-&lt;li&gt;Item 2&lt;/li&gt;
-&lt;li&gt;Item 3
-
-&lt;ul&gt;
-&lt;li&gt;Item 3a&lt;/li&gt;
-&lt;li&gt;Item 3b&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&#34;images:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;Images&lt;/h1&gt;
-
-&lt;p&gt;&lt;code&gt;![GitHub Logo](https://github.com/fluidicon.png)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://github.com/fluidicon.png&#34; alt=&#34;GitHub Logo&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;links:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;Links&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://github.com&#34;&gt;http://github.com&lt;/a&gt; - automatic!&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;[GitHub](http://github.com)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://github.com&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;blockquotes:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;Blockquotes&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;As Kanye West said:
-&amp;gt; We&#39;re living the future so
-&amp;gt; the present is our past.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;As Kanye West said:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;We&amp;rsquo;re living the future so
-the present is our past.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&#34;codes:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;Codes&lt;/h1&gt;
-
-&lt;h2 id=&#34;inline-code:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;Inline code&lt;/h2&gt;
-
-&lt;p&gt;I think you should use an &lt;code&gt;&amp;lt;addr&amp;gt;&lt;/code&gt; element here instead.&lt;/p&gt;
-
-&lt;h2 id=&#34;mutiline-code:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;Mutiline code&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
-
-int main() {
-    printf(&amp;quot;Hello, World!\n&amp;quot;);
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;more:aa77bbfd89a7b0ff10def205b9c08d51&#34;&gt;More&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/spf13/hugo&#34;&gt;Hugo on GitHub&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://guides.github.com/features/mastering-markdown/&#34;&gt;Mastring Markdown&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;Hugo是一个静态网站生成器&lt;/p&gt;</description>
     </item>
     
   </channel>

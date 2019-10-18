@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Siwei Xu</title>
+    <link>https://xusiwei.github.io/tags/</link>
+    <description>Recent content in Tags on Siwei Xu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 26 Mar 2016 18:40:13 +0800</lastBuildDate>
+    
+	<atom:link href="https://xusiwei.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RaspberryPi</title>
+      <link>https://xusiwei.github.io/tags/RaspberryPi/</link>
+      <pubDate>Sat, 26 Mar 2016 18:40:13 +0800</pubDate>
+      
+      <guid>https://xusiwei.github.io/tags/RaspberryPi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>https://xusiwei.github.io/tags/Nginx/</link>
+      <pubDate>Wed, 09 Mar 2016 23:38:56 +0800</pubDate>
+      
+      <guid>https://xusiwei.github.io/tags/Nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://xusiwei.github.io/tags/Docker/</link>
+      <pubDate>Tue, 08 Mar 2016 22:58:33 +0800</pubDate>
+      
+      <guid>https://xusiwei.github.io/tags/Docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GitHub</title>
+      <link>https://xusiwei.github.io/tags/GitHub/</link>
+      <pubDate>Sun, 21 Feb 2016 16:36:54 +0800</pubDate>
+      
+      <guid>https://xusiwei.github.io/tags/GitHub/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://xusiwei.github.io/tags/Hugo/</link>
+      <pubDate>Sun, 21 Feb 2016 16:36:54 +0800</pubDate>
+      
+      <guid>https://xusiwei.github.io/tags/Hugo/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
