@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Siwei Xu</title>
+    <title>Posts on 思维的博客</title>
     <link>https://xusiwei.github.io/post/</link>
-    <description>Recent content in Posts on Siwei Xu</description>
+    <description>Recent content in Posts on 思维的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 26 Mar 2016 18:40:13 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 18 Oct 2019 22:58:33 +0800</lastBuildDate>
     
 	<atom:link href="https://xusiwei.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>用Travis CI自动化Hugo生成及GitHub Pages部署</title>
+      <link>https://xusiwei.github.io/post/2019/10/hugo-github-pages-with-travis-ci/</link>
+      <pubDate>Fri, 18 Oct 2019 22:58:33 +0800</pubDate>
+      
+      <guid>https://xusiwei.github.io/post/2019/10/hugo-github-pages-with-travis-ci/</guid>
+      <description>Automation Hugo Generation and GitHub Pages Deployment with Travis CI 背景 使用Hugo作为个人博客生成器有一段时间了，博客原始文稿的markdown也是用了GitHub仓库管理。所以每次写完东西之后，除了markdown原始文稿需要提交一次，生成的静态站点内容也需要提交一次，有点麻烦。
+尝试 因为之前有用过免费的TravisCI，一直想着能不能通过它实现只提交一次原始Markdown文稿，自动生成一下静态站点、并上传到GitHub Pages仓。于是初步尝试了一下，验证了这样是可行的:
+language: c os: - linux before_install: - wget --quiet https://github.com/gohugoio/hugo/releases/download/v0.58.3/hugo_0.58.3_Linux-64bit.tar.gz - tar xzvf hugo_0.58.3_Linux-64bit.tar.gz - export PATH=$PATH:$PWD before_script: - mkdir public &amp;amp;&amp;amp; git clone https://github.com/$GITHUB_ID/$GITHUB_ID.github.io.git public script: - hugo after_success: - echo Generate success, deploy site to GitHub Pages. - subject=`git log --pretty=%s -n 1` - cd public - git add . - git -c user.</description>
+    </item>
     
     <item>
       <title>Raspberry Pi 使用科大镜像源</title>

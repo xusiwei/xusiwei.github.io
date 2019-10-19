@@ -7,22 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>GitHub | 思维的博客</title>
-    <meta property="og:title" content="GitHub - 思维的博客">
+    <title>CI/CD | 思维的博客</title>
+    <meta property="og:title" content="CI/CD - 思维的博客">
     <meta property="og:type" content="article">
         
         
     <meta name="Keywords" content="android,c&#43;&#43;,go,golang,java,python,软件架构,机器学习">
-    <meta name="description" content="GitHub">
+    <meta name="description" content="CI/CD">
         
     <meta name="author" content="Siwei Xu">
-    <meta property="og:url" content="https://xusiwei.github.io/tags/GitHub/">
+    <meta property="og:url" content="https://xusiwei.github.io/tags/CI/CD/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
     
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="alternate" type="application/rss+xml+xml" href="https://xusiwei.github.io/tags/GitHub/index.xml" title="思维的博客" />
+    <link rel="alternate" type="application/rss+xml+xml" href="https://xusiwei.github.io/tags/CI/CD/index.xml" title="思维的博客" />
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -69,7 +69,7 @@
                     
                     <h3 class="archive-title">
                         包含标签
-                        <span class="keyword">GitHub</span>
+                        <span class="keyword">CI/CD</span>
                         的文章
                     </h3>
                     
@@ -78,11 +78,11 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
-                                    <a href="https://xusiwei.github.io/post/2016/build-blog-with-hugo-and-github-pages/">用Hugo和GitHub Pages搭建博客</a>
+                                    <a href="https://xusiwei.github.io/post/2019/10/hugo-github-pages-with-travis-ci/">用Travis CI自动化Hugo生成及GitHub Pages部署</a>
                                 </h1>
                             </header>
                             <date class="post-meta meta-date">
-                                2016年2月21日
+                                2019年10月18日
                             </date>
                             
                             <div class="post-meta meta-category">
@@ -93,24 +93,10 @@
                             </div>
                             
                             <div class="post-content">
-                                <p>从前天晚上开始尝试了一下用Hugo和GitHub Pages搭建静态博客，总体还算顺利（主要是Hugo用起来比较方便）。</p>
-
-<p><strong>关于 Hugo</strong></p>
-
-<p>Hugo 是由 spf13 创建的一个静态网站生成器，首页：<a href="https://www.gohugo.io/">https://www.gohugo.io/</a></p>
-
-<h1 id="hugo-工作流">Hugo 工作流</h1>
-
-<p>下面将介绍Hugo的完整工作流程：</p>
-
-<h2 id="快速安装">快速安装</h2>
-
-<p>在 <a href="https://www.gohugo.io/">https://www.gohugo.io/</a> 能够找到 Homebrew 安装 Hugo的命令，</p>
-
-<p>以及Download： <a href="https://github.com/spf13/hugo/releases">https://github.com/spf13/hugo/releases</a></p>
-
-<p>下载对应的操作系统版本的Hugo二进制文件（hugo或者hugo.exe），添加到<code>$PATH</code>能找到的目录下。</p>……
-                                <p class="readmore"><a href="https://xusiwei.github.io/post/2016/build-blog-with-hugo-and-github-pages/">阅读全文</a></p>
+                                Automation Hugo Generation and GitHub Pages Deployment with Travis CI 背景 使用Hugo作为个人博客生成器有一段时间了，博客原始文稿的markdown也是用了GitHub仓库管理。所以每次写完东西之后，除了markdown原始文稿需要提交一次，生成的静态站点内容也需要提交一次，有点麻烦。
+尝试 因为之前有用过免费的TravisCI，一直想着能不能通过它实现只提交一次原始Markdown文稿，自动生成一下静态站点、并上传到GitHub Pages仓。于是初步尝试了一下，验证了这样是可行的:
+language: c os: - linux before_install: - wget --quiet https://github.com/gohugoio/hugo/releases/download/v0.58.3/hugo_0.58.3_Linux-64bit.tar.gz - tar xzvf hugo_0.58.3_Linux-64bit.tar.gz - export PATH=$PATH:$PWD before_script: - mkdir public &amp;&amp; git clone https://github.com/$GITHUB_ID/$GITHUB_ID.github.io.git public script: - hugo after_success: - echo Generate success, deploy site to GitHub Pages. - subject=`git log --pretty=%s -n 1` - cd public - git add . - git -c user.……
+                                <p class="readmore"><a href="https://xusiwei.github.io/post/2019/10/hugo-github-pages-with-travis-ci/">阅读全文</a></p>
                             </div>
                         </article>
                     
