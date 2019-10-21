@@ -49,6 +49,8 @@
                     
                     <a  href="https://xusiwei.github.io/archives/" title="归档">归档</a>
                     
+                    <a  href="https://xusiwei.github.io/links/" title="链接">链接</a>
+                    
                     <a  href="https://xusiwei.github.io/about/" title="关于">关于</a>
                     
                 </nav>
@@ -84,9 +86,7 @@
                             </div>
                             
                             <div class="post-content">
-                                Automation Hugo Generation and GitHub Pages Deployment with Travis CI 背景 使用Hugo作为个人博客生成器有一段时间了，博客原始文稿的markdown也是用了GitHub仓库管理。所以每次写完东西之后，除了markdown原始文稿需要提交一次，生成的静态站点内容也需要提交一次，有点麻烦。
-尝试 因为之前有用过免费的TravisCI，一直想着能不能通过它实现只提交一次原始Markdown文稿，自动生成一下静态站点、并上传到GitHub Pages仓。于是初步尝试了一下，验证了这样是可行的:
-language: c os: - linux before_install: - wget --quiet https://github.com/gohugoio/hugo/releases/download/v0.58.3/hugo_0.58.3_Linux-64bit.tar.gz - tar xzvf hugo_0.58.3_Linux-64bit.tar.gz - export PATH=$PATH:$PWD before_script: - mkdir public &amp;&amp; git clone https://github.com/$GITHUB_ID/$GITHUB_ID.github.io.git public script: - hugo after_success: - echo Generate success, deploy site to GitHub Pages. - subject=`git log --pretty=%s -n 1` - cd public - git add . - git -c user.……
+                                Automation Hugo Generation and GitHub Pages Deployment with Travis CI 背景 使用Hugo作为个人博客生成器有一段时间了，博客原始文稿的markdown也是用了GitHub仓库管理。所以每次写完……
                             </div>
                             <p class="readmore"><a href="https://xusiwei.github.io/post/2019/10/hugo-github-pages-with-travis-ci/">阅读全文</a></p>
                         </article>
@@ -459,12 +459,7 @@ tar xzvf pcre-8.38.tar.gz
                             </date>
                             
                             <div class="post-content">
-                                 关于我 我是许思维，目前从事端侧AI服务开发， 主要涉及的技术栈是Linux/C++/Android HAL/Android NDK。 自2014年以来，我一直从事Android系统相关开发， 曾做过一段时间的WLAN和Storage模块的特性开发和Bug修复。
-独立完成过三个项目的全部软件开发工作，对CI/CD有一定实践。 做过跨Linux/MacOS/Windows平台的项目， 对跨平台软件开发构建也有一些经验。
-期间也写过测试App、测试脚本、小工具等， 对Android App开发，Python、Bash脚本也有一定实操经验。
-我从2013年开始，业务时间陆续做过一些LeetCode算法题， 目前全球排名在10%以内。 大学时代参与过两次ACM省赛并获奖，对常用数据结构算法的也有一定了解。
-链接
- GitHub: https://github.com/xusiwei 新浪微博: http://weibo.com/xu4v CSDN博客： http://blog.csdn.net/xusiwei1236 豆瓣书单: http://book.douban.com/people/xu4v  ……
+                                关于我 我是许思维，目前从事端侧AI服务开发， 主要涉及的技术栈是Linux/C++/Android HAL/Android NDK。 自2014年以来，我一直从事And……
                             </div>
                             <p class="readmore"><a href="https://xusiwei.github.io/about/">阅读全文</a></p>
                         </article>
@@ -513,6 +508,26 @@ tar xzvf pcre-8.38.tar.gz
                     
 
 
+
+<ol class="page-navigator">
+    
+
+    
+    <li  class="current">
+        <a href="https://xusiwei.github.io/">1</a>
+    </li>
+    
+    <li >
+        <a href="https://xusiwei.github.io/page/2/">2</a>
+    </li>
+    
+
+    
+    <li class="next">
+        <a href="https://xusiwei.github.io/page/2/">下一页</a>
+    </li>
+    
+</ol>
 
 
 
@@ -633,6 +648,17 @@ tar xzvf pcre-8.38.tar.gz
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-75067552-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
