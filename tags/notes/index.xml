@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>notes on Siwei&#39;s site.</title>
+    <link>https://xusiwei.github.io/tags/notes/</link>
+    <description>Recent content in notes on Siwei&#39;s site.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 01 Feb 2020 12:04:52 +0800</lastBuildDate>
+    
+	<atom:link href="https://xusiwei.github.io/tags/notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Effective C&#43;&#43;（第三版）第一章笔记</title>
+      <link>https://xusiwei.github.io/post/2020/02/effective-cpp-notes/</link>
+      <pubDate>Sat, 01 Feb 2020 12:04:52 +0800</pubDate>
+      
+      <guid>https://xusiwei.github.io/post/2020/02/effective-cpp-notes/</guid>
+      <description>《Effective C++》是Scott Meyers的著名技术著作，它开创了Effective系列的技术图书， 包括后来的《Effective</description>
+    </item>
+    
+  </channel>
+</rss>

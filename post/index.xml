@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 思维的博客</title>
+    <title>Posts on Siwei&#39;s site.</title>
     <link>https://xusiwei.github.io/post/</link>
-    <description>Recent content in Posts on 思维的博客</description>
+    <description>Recent content in Posts on Siwei&#39;s site.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 18 Oct 2019 22:58:33 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 07 Feb 2020 20:42:51 +0800</lastBuildDate>
     
 	<atom:link href="https://xusiwei.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>从开源镜像站下载Android系统源码</title>
+      <link>https://xusiwei.github.io/post/2020/02/sync-aosp-code-from-mirror-site/</link>
+      <pubDate>Fri, 07 Feb 2020 20:42:51 +0800</pubDate>
+      
+      <guid>https://xusiwei.github.io/post/2020/02/sync-aosp-code-from-mirror-site/</guid>
+      <description>国内可以用来下载Andorid源码的开源镜像站有： 科大开源镜像站 清华开源镜像站 Tips: 不同地区（或不同运营商）的网络，从这两个镜像站下载代码的速度</description>
+    </item>
+    
+    <item>
+      <title>Effective C&#43;&#43;（第三版）第一章笔记</title>
+      <link>https://xusiwei.github.io/post/2020/02/effective-cpp-notes/</link>
+      <pubDate>Sat, 01 Feb 2020 12:04:52 +0800</pubDate>
+      
+      <guid>https://xusiwei.github.io/post/2020/02/effective-cpp-notes/</guid>
+      <description>《Effective C++》是Scott Meyers的著名技术著作，它开创了Effective系列的技术图书， 包括后来的《Effective</description>
+    </item>
     
     <item>
       <title>用Travis CI自动化Hugo生成及GitHub Pages部署</title>
@@ -17,7 +35,7 @@
       <pubDate>Fri, 18 Oct 2019 22:58:33 +0800</pubDate>
       
       <guid>https://xusiwei.github.io/post/2019/10/hugo-github-pages-with-travis-ci/</guid>
-      <description>Automation Hugo Generation and GitHub Pages Deployment with Travis CI 背景 使用Hugo作为个人博客生成器有一段时间了，博客原始文稿的markdown也是用了GitHub仓库管理。所以每次写完</description>
+      <description>用Travis CI自动化Hugo生成及GitHub Pages部署 背景 使用Hugo作为个人博客生成器有一段时间了，博客原始文稿的markdow</description>
     </item>
     
     <item>

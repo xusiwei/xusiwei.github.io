@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>操作指南 on 思维的博客</title>
+    <title>操作指南 on Siwei&#39;s site.</title>
     <link>https://xusiwei.github.io/categories/%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/</link>
-    <description>Recent content in 操作指南 on 思维的博客</description>
+    <description>Recent content in 操作指南 on Siwei&#39;s site.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 18 Oct 2019 22:58:33 +0800</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Fri, 18 Oct 2019 22:58:33 +0800</pubDate>
       
       <guid>https://xusiwei.github.io/post/2019/10/hugo-github-pages-with-travis-ci/</guid>
-      <description>Automation Hugo Generation and GitHub Pages Deployment with Travis CI 背景 使用Hugo作为个人博客生成器有一段时间了，博客原始文稿的markdown也是用了GitHub仓库管理。所以每次写完</description>
+      <description>用Travis CI自动化Hugo生成及GitHub Pages部署 背景 使用Hugo作为个人博客生成器有一段时间了，博客原始文稿的markdow</description>
     </item>
     
     <item>
