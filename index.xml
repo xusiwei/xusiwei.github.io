@@ -6,10 +6,19 @@
     <description>Recent content on Siwei&#39;s site.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 07 Feb 2020 20:42:51 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 25 Feb 2020 20:08:22 +0800</lastBuildDate>
     
 	<atom:link href="https://xusiwei.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Effective C&#43;&#43;（第三版）第二章笔记</title>
+      <link>https://xusiwei.github.io/post/2020/02/effective-cpp-notes2/</link>
+      <pubDate>Tue, 25 Feb 2020 20:08:22 +0800</pubDate>
+      
+      <guid>https://xusiwei.github.io/post/2020/02/effective-cpp-notes2/</guid>
+      <description>构造、析构、赋值运算符 5. 了解C++默默编写并调用哪些函数 一个空的类，如果你没有声明，编译器会为它声明： 默认构造函数 拷贝构造函数 赋值运算符函数</description>
+    </item>
     
     <item>
       <title>从开源镜像站下载Android系统源码</title>
